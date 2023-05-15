@@ -1,8 +1,8 @@
 {
-    "name": "abd-wazzan/laravel-api-boilerplate",
+    "name": "yaman-shahbander/writer-nook",
     "type": "project",
-    "description": "A Laravel project with a Domain-Driven Design (DDD) structure, basic configuration, and commonly used packages pre-installed, directed towards building APIs.",
-    "keywords": ["boilerplate", "laravel"],
+    "description": "A Laravel project with a Domain-Driven Design (DDD) structure.",
+    "keywords": ["laravel"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -18,6 +18,7 @@
         "barryvdh/laravel-ide-helper": "^2.13",
         "fakerphp/faker": "^1.21.0",
         "knuckleswtf/scribe": "^4.17",
+        "laravel/homestead": "^14.3",
         "laravel/pint": "^1.7",
         "laravel/sail": "^1.21",
         "laravel/telescope": "^4.14",

@@ -1,8 +1,5 @@
 <p align="center">
-<img src="https://user-images.githubusercontent.com/46269541/230351628-f3eb6682-3799-42d9-8e7a-9ab918906f2e.png" alt="Laravel API Boilerplate">
-</p>
-<p align="center">
-  A <a href="https://laravel.com" target="_blank">Laravel</a> project with a Domain-Driven Design (DDD) structure, basic configuration, and commonly used packages pre-installed  and configured, to help you start building your next big application.
+  A <a href="https://laravel.com" target="_blank">Laravel</a> project with a Domain-Driven Design (DDD) structure.
 </p>
 
 # Requirements
@@ -11,7 +8,7 @@
 
 # Installation
 ```bash
-composer create-project abd-wazzan/laravel-api-boilerplate api-app
+composer create-project yaman-shahbander/writer-nook api-app
 ```
 Install dependencies
 ```bash
@@ -108,9 +105,6 @@ Application Layer Example:
         ├── Filters
         └── ViewModels
 
-### Dependency Illustration
-[![](https://mermaid.ink/img/pako:eNptkV9PwjAUxb9KcxMSTAZh_xjswQRWfJKggC8yHup2lcVtnV2XiJTvbulEMPGtved3em7vPUDCU4QQ3gSrdmRN45IQMtk81Si2pNe7VUv8aLCWiky7ES-l4HmOgkwSmfHyxtBTw9H1QpGoS3nBsvKPHhn9gQlWoEShCO3OdWjeqvSkErV6vCd1IrJKJ802lEn2wmrcGmTWIo8Nij0RWDe5hui1e_lTjC6BRC0qFOzUxq9neunXeCpe1qjI5NrV_sNUOp0ze4cy2RHTgKJnjf7Tlk4ACwoUegqpHuvhBMcgd1hgDKE-pky8xxCXR82xRvLVvkwglKJBC5oqZRJpxvQ2CghfWV7rKqaZ5GLe7smsy4KKlc-cF2ejvkJ4gE8IHc_v-844GNuuZ49tx3Yt2EM4CvqeF7gjNxgNfN-xg6MFX-aBQX_oBY4_9H3XDtzB0HeO333zodw?type=png)](https://mermaid.live/edit#pako:eNptkV9PwjAUxb9KcxMSTAZh_xjswQRWfJKggC8yHup2lcVtnV2XiJTvbulEMPGtved3em7vPUDCU4QQ3gSrdmRN45IQMtk81Si2pNe7VUv8aLCWiky7ES-l4HmOgkwSmfHyxtBTw9H1QpGoS3nBsvKPHhn9gQlWoEShCO3OdWjeqvSkErV6vCd1IrJKJ802lEn2wmrcGmTWIo8Nij0RWDe5hui1e_lTjC6BRC0qFOzUxq9neunXeCpe1qjI5NrV_sNUOp0ze4cy2RHTgKJnjf7Tlk4ACwoUegqpHuvhBMcgd1hgDKE-pky8xxCXR82xRvLVvkwglKJBC5oqZRJpxvQ2CghfWV7rKqaZ5GLe7smsy4KKlc-cF2ejvkJ4gE8IHc_v-844GNuuZ49tx3Yt2EM4CvqeF7gjNxgNfN-xg6MFX-aBQX_oBY4_9H3XDtzB0HeO333zodw)
-
 ### Resources
 - [Domain Oriented Laravel](https://stitcher.io/blog/laravel-beyond-crud-01-domain-oriented-laravel)
 - [Working With Data](https://stitcher.io/blog/laravel-beyond-crud-02-working-with-data)
@@ -177,45 +171,6 @@ Additional scribe tags that match the ApiResponseHelper responses.
 |:------------------|:-----------------------------------------------------------------|
 | `@usesPagination` | will add `page[number]` and `page[size]` to the query parameters |
 
-### Usages Example:
-```php
-<?php
-
-namespace App\Http\Api\Controllers;
-
-use App\Helpers\ApiController;
-use App\Traits\ApiResponseHelpers;
-use Illuminate\Http\JsonResponse;
-use App\Http\Controller;
-
-/**
- * Class CategoryController
- * @group Category
- */
-class CategoryController extends Controller
-{
-    use ApiResponseHelper;
-
-    /**
-     * Get Categories
-     *
-     * this request is used to get all categories.
-     *
-     * @queryParam filter[name]
-     *
-     * @usesPagination
-     * @failedResponse
-     * @forbiddenResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     * @throws \Throwable
-     */
-    public function index(): Response
-    {
-        return CategoryResource::collection($categories->all());
-    }
-
-}
-```
 
 ## Global Helper
 Simple php file that contains you global functions, which you can find it in `./src/shared/Helpers/global.php`.
@@ -292,7 +247,3 @@ environment. The normal seeders will stay in `DatabaseSeeder.php`.
 
 ## Shared Directory
 The `src/shared/` directory is used for helper, traits, enums .... that are going to be used by the application and the domain.
-
-# Feedback
-I will be happy to hear your feedback! If you have any recommendation or suggestion, please send an e-mail
-to [Mail](mailto:abdulrahmanwazzan.pro@gmail.com).
