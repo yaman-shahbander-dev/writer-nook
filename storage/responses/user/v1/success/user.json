@@ -1,0 +1,21 @@
+{
+    "message": "OK",
+    "data": {
+        "id": "9930a0c6-120a-48ef-b7b9-a2c4bf8a6610",
+        "type": "users",
+        "attributes": {
+            "name": "mohammad yaman shahbandar",
+            "first_name": "mohammad yaman",
+            "last_name": "shahbandar",
+            "gender": "male",
+            "scope": "user",
+            "type": "user",
+            "email": "yaman@gmail.com",
+            "banned_at": null,
+            "created_at": "2023-05-17T16:35:48.000000Z",
+            "updated_at": "2023-05-17T16:35:48.000000Z",
+            "deleted_at": null,
+            "bearer_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5OTMwOWIxNC04ODA4LTQzNDAtOTEyZi01YWYwNDc4MWVkMjgiLCJqdGkiOiIxZDk0YmExZjM2ZGZlYTI3NWNhYmE5NWU1ZDlhYjU5NTVhNTRhOTFiZDgwYmE1NmYxNjVmZmUwZGMyODA1NDlkM2FjNmNhOGU4NGFhZWI3ZiIsImlhdCI6MTY4NDM0MTM0OC41NzAyNjUsIm5iZiI6MTY4NDM0MTM0OC41NzAyNywiZXhwIjoxNzE1OTYzNzQ4LjUyODI5Miwic3ViIjoiOTkzMGEwYzYtMTIwYS00OGVmLWI3YjktYTJjNGJmOGE2NjEwIiwic2NvcGVzIjpbInVzZXIiXX0.XJVb1TW7Di1yEph9rPxQSSBfhrxmQRiAWji0DJ9vUWKupd0JDObzRdDZ_rpi0ECv1vWnt-JBHEa-2im5lrTKTuWMhVt0YaqrKmr7EBHkTFLMuJSJj-fFPgE7rZ4ommW-swEGknadTKFonSsB7zJLzTPqbLEEM_QHKntpVFkiOmLxfOUqbAxNqPDzqcD7FBlTY0qYofbV3yhchLwQasBcb0KAKe12YF_f34VclQcKyx5dd19X9l3iUdtJR3GRcFOfWFZbJwyi584vwbDYkaduLR4G69s74SjdwQ4vU_fh6lBCO86vA150uk5qwZimQH43SyrwpW89xMVL_s6vxJq8E3UmD7y7sWhipaeb4VPNhX56RqlwU1_UiQU73KmxbhlOSAws0wiwfOPB_7ml8HGacUPfC7QL98Yb4-bR9so8RhjKBGdqNq4WIISUroMeWAo6851QY-6BTvdF8blP8vmNwxn7Pxe-5aOr-igdn78Au_AFltt8agVTnPJxLTeagoU3Vn0MXOopQuSeuU3qaTVVX8ULQeECw10C50oIHt1Iq6iHQtRIQMCMrwzA0qgL1znaYTBtwElXPDtJ3Ta-TaZQcvhyrZ4puCWk3EjQNe0U9JZEfjSztHU7z4AnYKMPvVPlcMe39xiOaa-o3_xLx24xKN0EYL6GMvAaSc_DJXvfT5M"
+        }
+    }
+}

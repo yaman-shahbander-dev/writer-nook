@@ -1,0 +1,21 @@
+{
+    "message": "OK",
+    "data": {
+        "id": "9930a9bc-aed1-408e-a91f-9134eb0e90b1",
+        "type": "users",
+        "attributes": {
+            "name": "Author",
+            "first_name": "Author",
+            "last_name": "Author",
+            "gender": "other",
+            "scope": "author",
+            "type": "author",
+            "email": "author@project.com",
+            "banned_at": null,
+            "created_at": "2023-05-17T17:00:52.000000Z",
+            "updated_at": "2023-05-17T17:00:52.000000Z",
+            "deleted_at": null,
+            "bearer_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5OTMwYTljOC0zMTJjLTQyZDMtODRiMy05ODg1YmYxZGE2ZTkiLCJqdGkiOiJjMmRmZDQ2M2QzM2I2NjA5MDU4MGMwN2RmMDc0OGYxYmQ1ZGU3NzYyYWRmNzZiZjhhNzMzOWNjMTdjZDJhMjk0YjU3ZjQ1MTI4YTdmNjRlMyIsImlhdCI6MTY4NDM0MzAzNS40NDI0NSwibmJmIjoxNjg0MzQzMDM1LjQ0MjQ1NCwiZXhwIjoxNzE1OTY1NDM1LjM5NTg0Miwic3ViIjoiOTkzMGE5YmMtYWVkMS00MDhlLWE5MWYtOTEzNGViMGU5MGIxIiwic2NvcGVzIjpbImF1dGhvciJdfQ.Ot7ASgyl1ou54jzomKyJMr3JymDy6-kdtM1l4DlE9EwCbL5mXBI3SdmMUt-sBCBbm9YBsf-pU8tecg85hsbdfNFmWReRV41qQqpIE78yniEKzuxd-nUqToc0CfVcVyZshD83ujq50Vr0qUAbMJLH-JPejq039FuU-dlXUcYOUH29ct75A_41eKwI4O4JF5NC74Vu5IIsMXtC4mhb1OBALB6lMc2Dn-5-eb82pNdCrG4E-UeTMCpqvMdL4sYIF1Mzjoe6fOlzyD_qIkmgcj5BzXgIHBpEMmwU7JPLOUcVOxy90J9IAzg0FKGoy-EHTumFy_2FBin-65tUj-4RSFGzocwOE9VaFQ8Lw8iTDRvNjShV1ikmvUIWFpyPC_wCxkRp726YsExDYPgmxk0awLPqJvYjoONpYUOb0KM8hb--To51UFkbcHCLSYLM-APX9RiIfIHx7-PyAU-wVfWfx2A4zQcfbwGO5FTufy3oMn2VuGKXL2ns6GaUSiJaak9BxwRBgB77UhRTIn_9DSRlZR0fF7PRkFrnPXuQRSDU19Yma0A_Y9f8hb3NQzxJG__r2XPkqc6Y8SzmYXRetiVySzrBu3VPLTiaDcyXLDk_isYQ0Qb-17EwuXz1lGUMKY7zn_Euasn7K9Zfg0xPqsbO3AHF5DArhTm4oWDp6-PaCSMaMxI"
+        }
+    }
+}
