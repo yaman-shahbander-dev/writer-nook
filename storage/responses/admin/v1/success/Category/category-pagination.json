@@ -1,0 +1,117 @@
+{
+    "message": "OK",
+    "data": {
+        "collection": [
+            {
+                "id": "1ee0e771-3b80-3731-9e59-0c3537868157",
+                "name": "Alfredo Schultz",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "34a97850-26f0-3546-97c1-2a8249b196d9",
+                "name": "Luna Grady",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "3aa413c5-44d4-3560-b595-72171c4a1286",
+                "name": "Torrance Dickinson",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "55ee807a-eb93-356f-80dd-42a09d1e3c72",
+                "name": "Cameron Lockman",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "5baba23e-3814-31d5-8fb0-aa4ca7b7035c",
+                "name": "Miss Nora Steuber III",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "63c755d7-ecd0-3079-ab95-922640e3023a",
+                "name": "Cathy Waters",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "642b88e5-dece-336e-948f-6c05d52a930b",
+                "name": "Dallas DuBuque",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "64331d12-e694-3121-b96f-2a69613187a9",
+                "name": "Royce White Jr.",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "92250cc1-d195-32ae-a47e-224d750dbd00",
+                "name": "Marley Shields",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "ba4eb7e1-7eba-3ff5-ab15-fc3d36071aae",
+                "name": "Gerson Aufderhar",
+                "main_category_id": null,
+                "created_at": "2023-05-18T14:49:22+00:00",
+                "updated_at": "2023-05-18T14:49:22+00:00",
+                "deleted_at": null
+            }
+        ],
+        "meta": {
+            "current_page": 1,
+            "first_page_url": "http://writernook.test/admin/v1/category/category?page%5Bnumber%5D=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "http://writernook.test/admin/v1/category/category?page%5Bnumber%5D=1",
+            "links": [
+                {
+                    "url": null,
+                    "label": "&laquo; Previous",
+                    "active": false
+                },
+                {
+                    "url": "http://writernook.test/admin/v1/category/category?page%5Bnumber%5D=1",
+                    "label": "1",
+                    "active": true
+                },
+                {
+                    "url": null,
+                    "label": "Next &raquo;",
+                    "active": false
+                }
+            ],
+            "next_page_url": null,
+            "path": "http://writernook.test/admin/v1/category/category",
+            "per_page": 15,
+            "prev_page_url": null,
+            "to": 10,
+            "total": 10
+        }
+    }
+}
