@@ -17,4 +17,9 @@ enum PermissionEnum: string
     case CATEGORY_CREATE = 'category.create.*';
     case CATEGORY_UPDATE = 'category.update.*';
     case CATEGORY_DELETE = 'category.delete.*';
+
+    case TAG_VIEW_ANY = 'tag.view.*';
+    case TAG_CREATE = 'tag.create.*';
+    case TAG_UPDATE = 'tag.update.*';
+    case TAG_DELETE = 'tag.delete.*';
 }

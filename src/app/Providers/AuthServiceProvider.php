@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use Domain\Category\Models\Category;
+use Domain\Category\Policies\CategoryPolicy;
+use Domain\Tag\Models\Tag;
+use Domain\Tag\Policies\TagPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -13,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        Category::class => CategoryPolicy::class,
+        Tag::class => TagPolicy::class,
     ];
 
     /**

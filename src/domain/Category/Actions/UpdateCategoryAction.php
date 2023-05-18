@@ -20,6 +20,9 @@ class UpdateCategoryAction
     {
         return QueryBuilder::for($this->category)
             ->where('id', $data->id)
-            ->update($data->toArray());
+            ->update([
+                'name' => $data->name,
+                'main_category_id' => $data->mainCategoryId
+            ]);
     }
 }

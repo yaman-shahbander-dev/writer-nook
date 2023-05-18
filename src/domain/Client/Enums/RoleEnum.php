@@ -23,6 +23,10 @@ enum RoleEnum: string
                 PermissionEnum::CATEGORY_CREATE->value,
                 PermissionEnum::CATEGORY_UPDATE->value,
                 PermissionEnum::CATEGORY_DELETE->value,
+                PermissionEnum::TAG_VIEW_ANY->value,
+                PermissionEnum::TAG_CREATE->value,
+                PermissionEnum::TAG_UPDATE->value,
+                PermissionEnum::TAG_DELETE->value,
             ],
             self::AUTHOR->value => [
             ],

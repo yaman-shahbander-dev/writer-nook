@@ -1,0 +1,107 @@
+{
+    "message": "OK",
+    "data": {
+        "collection": [
+            {
+                "id": "2a101148-a93c-39fb-abd6-fb877d571b37",
+                "name": "Prof. Ward Goldner IV",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "648cd831-c296-3a56-bfcb-f2e8803aabf8",
+                "name": "Dr. Davonte Purdy",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "6ab0a95b-dfba-301a-a88f-70a6e902396b",
+                "name": "Theresa Murray",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "7642615a-b268-3694-bac2-2f9493e0a2db",
+                "name": "Marguerite Willms",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "828a9cb8-80fb-37ba-a9f0-219e51ea19e8",
+                "name": "Anna Ritchie DDS",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "9aa90720-a01b-3308-bc06-17e61c131d00",
+                "name": "Isai Feeney V",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "a50aca47-9539-319c-a0d7-f2c28589b084",
+                "name": "Miss America Treutel Sr.",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "bce22065-f1a7-3998-b239-1223cbab8e48",
+                "name": "Paula Deckow MD",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "edb2c797-2b21-331d-a579-f33dcb6fd8eb",
+                "name": "Mitchel Bernhard",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            },
+            {
+                "id": "f6bc073e-4983-38ac-8afc-79fa02b32a99",
+                "name": "Rose Huel V",
+                "created_at": "2023-05-18T16:21:01+00:00",
+                "updated_at": "2023-05-18T16:21:01+00:00",
+                "deleted_at": null
+            }
+        ],
+        "meta": {
+            "current_page": 1,
+            "first_page_url": "http://writernook.test/admin/v1/tag/tag?page%5Bnumber%5D=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "http://writernook.test/admin/v1/tag/tag?page%5Bnumber%5D=1",
+            "links": [
+                {
+                    "url": null,
+                    "label": "&laquo; Previous",
+                    "active": false
+                },
+                {
+                    "url": "http://writernook.test/admin/v1/tag/tag?page%5Bnumber%5D=1",
+                    "label": "1",
+                    "active": true
+                },
+                {
+                    "url": null,
+                    "label": "Next &raquo;",
+                    "active": false
+                }
+            ],
+            "next_page_url": null,
+            "path": "http://writernook.test/admin/v1/tag/tag",
+            "per_page": 15,
+            "prev_page_url": null,
+            "to": 10,
+            "total": 10
+        }
+    }
+}

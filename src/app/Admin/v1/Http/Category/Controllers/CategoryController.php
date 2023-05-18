@@ -54,7 +54,7 @@ class CategoryController extends Controller
     {
         $this->authorize('update', $category);
 
-        $result = UpdateCategoryAction::run(CategoryData::from($request->all()));
+        $result = UpdateCategoryAction::run(CategoryData::from($request));
 
         return $result
             ? $this->okResponse()

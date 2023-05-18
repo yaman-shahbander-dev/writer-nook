@@ -1,0 +1,13 @@
+{
+    "message": "OK",
+    "data": {
+        "id": "648cd831-c296-3a56-bfcb-f2e8803aabf8",
+        "type": "tags",
+        "attributes": {
+            "name": "Dr. Davonte Purdy",
+            "created_at": "2023-05-18T16:21:01.000000Z",
+            "updated_at": "2023-05-18T16:21:01.000000Z",
+            "deleted_at": null
+        }
+    }
+}

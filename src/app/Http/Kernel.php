@@ -8,6 +8,7 @@ class Kernel extends HttpKernel
 {
     protected $middlewarePriority = [
         'json.response',
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ];
 
     /**
@@ -72,5 +73,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
         'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ];
 }
