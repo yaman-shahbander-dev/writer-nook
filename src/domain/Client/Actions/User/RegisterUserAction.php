@@ -24,6 +24,10 @@ class RegisterUserAction
             return null;
         }
 
-        return LoginAction::run($authData, $user);
+        if (AssignPermissionsToUserAction::run($user)) {
+            return LoginAction::run($authData, $user);
+        }
+
+        return null;
     }
 }
