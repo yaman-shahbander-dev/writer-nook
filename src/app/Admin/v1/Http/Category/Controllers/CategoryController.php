@@ -19,7 +19,7 @@ class CategoryController extends Controller
 {
     public function index(): JsonResponse
     {
-//        $this->authorize('view', new Category());
+        $this->authorize('view', new Category());
 
         $categories = GetCategoriesAction::run();
 
@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
     public function show(string $category): JsonResponse
     {
-//        $this->authorize('view', new Category());
+        $this->authorize('view', new Category());
 
         $category = ShowCategoryAction::run($category);
 
@@ -41,7 +41,7 @@ class CategoryController extends Controller
 
     public function store(CreateCategoryRequest $request): JsonResponse
     {
-//        $this->authorize('create', Category::class);
+        $this->authorize('create', Category::class);
 
         $category = CreateCategoryAction::run(CategoryData::from($request->all()));
 
@@ -52,7 +52,7 @@ class CategoryController extends Controller
 
     public function update(UpdateCategoryRequest $request, Category $category): JsonResponse
     {
-//        $this->authorize('update', $category);
+        $this->authorize('update', $category);
 
         $result = UpdateCategoryAction::run(CategoryData::from($request->all()));
 
@@ -63,7 +63,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category): JsonResponse
     {
-//        $this->authorize('delete', $category);
+        $this->authorize('delete', $category);
 
         $result = DeleteCategoryAction::run($category->id);
 
