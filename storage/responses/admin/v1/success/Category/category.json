@@ -1,0 +1,14 @@
+{
+    "message": "OK",
+    "data": {
+        "id": "5baba23e-3814-31d5-8fb0-aa4ca7b7035c",
+        "type": "categories",
+        "attributes": {
+            "name": "Miss Nora Steuber III",
+            "main_category_id": null,
+            "created_at": "2023-05-18T14:49:22.000000Z",
+            "updated_at": "2023-05-18T14:49:22.000000Z",
+            "deleted_at": null
+        }
+    }
+}
