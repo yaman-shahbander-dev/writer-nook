@@ -10,6 +10,7 @@ use Database\Seeders\Client\PermissionSeeder;
 use Database\Seeders\Client\RolePermissionSeeder;
 use Database\Seeders\Client\UserPermissionSeeder;
 use Database\Seeders\Client\UserSeeder;
+use Database\Seeders\Tag\TagSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
             AdminPermissionSeeder::class,
             AuthorPermissionSeeder::class,
             UserPermissionSeeder::class,
+            TagSeeder::class
         ]);
 
 
