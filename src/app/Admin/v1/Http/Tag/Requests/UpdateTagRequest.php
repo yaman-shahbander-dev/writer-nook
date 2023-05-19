@@ -3,14 +3,13 @@
 namespace App\Admin\v1\Http\Tag\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class UpdateTagRequest extends FormRequest
 {
     public function prepareForValidation()
     {
         $this->merge([
-           'id' => $this->route('tag')?->id
+            'id' => $this->route('tag')?->id
         ]);
     }
 
@@ -24,10 +23,9 @@ class UpdateTagRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                'string',
                 'min:3',
                 'max:55',
-                Rule::unique('tags', 'name')->ignore($this->route('tag'))
+                'string'
             ]
         ];
     }
