@@ -6,14 +6,10 @@ use App\Admin\v1\Http\Category\Requests\CreateCategoryRequest;
 use App\Admin\v1\Http\Category\Requests\UpdateCategoryRequest;
 use App\Admin\v1\Http\Category\Resources\CategoryResource;
 use App\Http\Controllers\Controller;
-use Domain\Category\Actions\CreateCategoryAction;
-use Domain\Category\Actions\DeleteCategoryAction;
-use Domain\Category\Actions\GetCategoriesAction;
-use Domain\Category\Actions\ShowCategoryAction;
-use Domain\Category\Actions\UpdateCategoryAction;
 use Domain\Category\DataTransferObjects\CategoryData;
 use Domain\Category\Models\Category;
 use Illuminate\Http\JsonResponse;
+use Domain\Category\Facades\CategoryFacade;
 
 class CategoryController extends Controller
 {
@@ -21,7 +17,7 @@ class CategoryController extends Controller
     {
         $this->authorize('view', new Category());
 
-        $categories = GetCategoriesAction::run();
+        $categories = CategoryFacade::index();
 
         return $categories
             ? $this->okResponse($categories)
@@ -32,7 +28,7 @@ class CategoryController extends Controller
     {
         $this->authorize('view', new Category());
 
-        $category = ShowCategoryAction::run($category);
+        $category = CategoryFacade::show($category);
 
         return $category
             ? $this->okResponse(CategoryResource::make($category))
@@ -43,7 +39,7 @@ class CategoryController extends Controller
     {
         $this->authorize('create', Category::class);
 
-        $category = CreateCategoryAction::run(CategoryData::from($request->all()));
+        $category = CategoryFacade::store(CategoryData::from($request->all()));
 
         return $category
             ? $this->okResponse(CategoryResource::make($category))
@@ -54,7 +50,7 @@ class CategoryController extends Controller
     {
         $this->authorize('update', $category);
 
-        $result = UpdateCategoryAction::run(CategoryData::from($request));
+        $result = CategoryFacade::update(CategoryData::from($request));
 
         return $result
             ? $this->okResponse()
@@ -65,7 +61,7 @@ class CategoryController extends Controller
     {
         $this->authorize('delete', $category);
 
-        $result = DeleteCategoryAction::run($category->id);
+        $result = CategoryFacade::destroy($category->id);
 
         return $result
             ? $this->okResponse()

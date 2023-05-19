@@ -6,12 +6,8 @@ use App\Admin\v1\Http\Tag\Requests\CreateTagRequest;
 use App\Admin\v1\Http\Tag\Requests\UpdateTagRequest;
 use App\Admin\v1\Http\Tag\Resources\TagResource;
 use App\Http\Controllers\Controller;
-use Domain\Tag\Actions\CreateTagAction;
-use Domain\Tag\Actions\DeleteTagAction;
-use Domain\Tag\Actions\GetTagsAction;
-use Domain\Tag\Actions\ShowTagAction;
-use Domain\Tag\Actions\UpdateTagAction;
 use Domain\Tag\DataTransferObjects\TagData;
+use Domain\Tag\Facades\TagFacade;
 use Domain\Tag\Models\Tag;
 use Illuminate\Http\JsonResponse;
 
@@ -21,7 +17,7 @@ class TagController extends Controller
     {
         $this->authorize('view', new Tag());
 
-        $tags = GetTagsAction::run();
+        $tags = TagFacade::index();
 
         return $tags
             ? $this->okResponse($tags)
@@ -32,7 +28,7 @@ class TagController extends Controller
     {
         $this->authorize('view', new Tag());
 
-        $tag = ShowTagAction::run($tag);
+        $tag = TagFacade::show($tag);
 
         return $tag
             ? $this->okResponse(TagResource::make($tag))
@@ -43,7 +39,7 @@ class TagController extends Controller
     {
         $this->authorize('create', Tag::class);
 
-        $tag = CreateTagAction::run(TagData::from($request->all()));
+        $tag = TagFacade::store(TagData::from($request));
 
         return $tag
             ? $this->okResponse(TagResource::make($tag))
@@ -52,9 +48,7 @@ class TagController extends Controller
 
     public function update(UpdateTagRequest $request, Tag $tag): JsonResponse
     {
-        $this->authorize('update', $tag);
-
-        $result = UpdateTagAction::run(TagData::from($request->all()));
+        $result = TagFacade::update(TagData::from($request->all()));
 
         return $result
             ? $this->okResponse()
@@ -65,7 +59,7 @@ class TagController extends Controller
     {
         $this->authorize('delete', $tag);
 
-        $result = DeleteTagAction::run($tag->id);
+        $result = TagFacade::destroy($tag->id);
 
         return $result
             ? $this->okResponse()
