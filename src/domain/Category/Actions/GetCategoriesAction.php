@@ -5,7 +5,7 @@ namespace Domain\Category\Actions;
 use Domain\Category\DataTransferObjects\CategoryData;
 use Domain\Category\Models\Category;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Shared\Helpers\PaginatedCollectionData;
+use Spatie\LaravelData\PaginatedDataCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -18,14 +18,15 @@ class GetCategoriesAction
     ) {
     }
 
-    public function handle(): PaginatedCollectionData
+    public function handle(): PaginatedDataCollection
     {
         $categories = QueryBuilder::for($this->category)
             ->allowedFilters([
                 AllowedFilter::partial('name')
             ])
-            ->jsonPaginate(CategoryData::class);
+            ->allowedIncludes(['articles'])
+            ->paginate();
 
-        return CategoryData::paginatedCollection($categories);
+        return CategoryData::collection($categories);
     }
 }

@@ -18,8 +18,6 @@ class UserData extends BaseData
         public ?string $firstName,
         public ?string $lastName,
         public ?string $gender,
-        public readonly ?string $scope = UserScopes::USER->value,
-        public readonly ?string $type = UserTypes::USER->value,
         public ?string $password,
         public ?string $email,
         public ?Carbon $bannedAt,
@@ -27,6 +25,8 @@ class UserData extends BaseData
         public ?Carbon $updatedAt,
         public ?Carbon $deletedAt,
         public ?string $bearerToken,
+        public readonly ?string $scope = UserScopes::USER->value,
+        public readonly ?string $type = UserTypes::USER->value,
     ) {
     }
 }

@@ -1,0 +1,272 @@
+{
+    "message": "OK",
+    "data": {
+        "id": "9320059d-41be-3c38-be42-0acbf777f771",
+        "type": "articles",
+        "attributes": {
+            "user_id": "993887f8-db31-480f-bf57-6ddf7fb900ef",
+            "title": "voluptate",
+            "content": "Consequatur et perspiciatis quae omnis soluta suscipit placeat.",
+            "hashed_content": "RnVnYSBpbiBldCBhbGlxdWFtIHRlbXBvcmlidXMgZXN0IGF1dC4=",
+            "excerpt": "sapiente",
+            "state": "published",
+            "created_at": "2023-05-21T14:53:06.000000Z",
+            "updated_at": "2023-05-21T14:53:06.000000Z",
+            "deleted_at": null
+        },
+        "relationships": {
+            "categories": [
+                {
+                    "id": "0ee651fd-2a90-3fad-8bee-02d7d5c81c3a",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Turner Kautzer",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "368fb29e-3963-3b8b-bca5-fef922a4a31d",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Montana Marks",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "3eb7f94f-dd18-325f-a302-c84310595578",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Emanuel Ondricka",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "42251e47-c297-3766-bfdf-2ed9d4da092d",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Else Dickens II",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "87e3ca7d-92e8-390b-8d57-7033996a6872",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Prof. Nedra Gerlach V",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "965cfddf-93c1-37dd-9f80-bbe44c35c342",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Hazel West",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "9d49065e-03b3-3300-afb0-682d43038367",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Miss Evalyn Halvorson",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a77f6e0e-2a6e-3572-8572-74227b37682a",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Carolyn West V",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "aa1a5648-4dde-3390-96c4-9de479ffaa73",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Mrs. Marguerite Friesen",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "fc7b5250-ed08-39d0-932f-b72e39cad4e0",
+                    "type": "categories",
+                    "attributes": {
+                        "name": "Wellington Buckridge",
+                        "main_category_id": null,
+                        "created_at": "2023-05-21T14:53:04.000000Z",
+                        "updated_at": "2023-05-21T14:53:04.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                }
+            ],
+            "tags": [
+                {
+                    "id": "2097c158-6f6a-3b63-8e01-e8932d5963e1",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Karen Greenholt",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "395340f3-d14b-36f8-afcf-80d4768d892b",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Prof. Columbus Corkery",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "4715300a-f0bd-3183-896c-ae0f4d1b45b9",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Annetta Bins",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "7bc0ea71-c4e4-3398-bd48-7c97db6e877c",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Mr. Jayde Homenick II",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "7bf5fe21-55c6-3509-b602-c1ccb5bc5f6c",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Prof. Beaulah Flatley",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "89a8bf1f-bcd0-3176-8243-2890b069f952",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Christine Koch",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "98ca6943-ac44-32f8-bc2d-a85edf783a8b",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Rosanna Maggio",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "a565b2ac-c802-3c80-bad2-58e824c0317c",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Mr. Kraig Terry",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e13b4ab3-97ee-3df5-9ab4-06a4bdef175b",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Mr. Rodger Emard DVM",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "e8b76a46-cd86-34a8-8747-14c2e026ec28",
+                    "type": "tags",
+                    "attributes": {
+                        "name": "Dulce Prohaska",
+                        "created_at": "2023-05-21T14:53:05.000000Z",
+                        "updated_at": "2023-05-21T14:53:05.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                }
+            ],
+            "author": {
+                "id": "993887f8-db31-480f-bf57-6ddf7fb900ef",
+                "type": "users",
+                "attributes": {
+                    "name": "Author",
+                    "first_name": "Author",
+                    "last_name": "Author",
+                    "gender": "male",
+                    "scope": "author",
+                    "type": "author",
+                    "email": "author@project.com",
+                    "banned_at": null,
+                    "created_at": "2023-05-21T14:53:04.000000Z",
+                    "updated_at": "2023-05-21T14:53:04.000000Z",
+                    "deleted_at": null,
+                    "bearer_token": null
+                }
+            }
+        }
+    }
+}

@@ -20,6 +20,7 @@ class ShowTagAction
     {
         $tag = QueryBuilder::for($this->tag)
             ->where('id', $id)
+            ->allowedIncludes(['articles'])
             ->first();
 
         return $tag ? TagData::from($tag) : null;

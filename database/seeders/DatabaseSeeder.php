@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\Article\ArticleCategorySeeder;
+use Database\Seeders\Article\ArticleSeeder;
+use Database\Seeders\Article\ArticleTagSeeder;
 use Database\Seeders\Category\CategorySeeder;
 use Database\Seeders\Client\AdminPermissionSeeder;
 use Database\Seeders\Client\AuthorPermissionSeeder;
@@ -37,7 +40,10 @@ class DatabaseSeeder extends Seeder
             AdminPermissionSeeder::class,
             AuthorPermissionSeeder::class,
             UserPermissionSeeder::class,
-            TagSeeder::class
+            TagSeeder::class,
+            ArticleSeeder::class,
+            ArticleCategorySeeder::class,
+            ArticleTagSeeder::class,
         ]);
 
 

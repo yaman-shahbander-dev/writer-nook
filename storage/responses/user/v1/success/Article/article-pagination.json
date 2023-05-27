@@ -1,0 +1,112 @@
+{
+    "message": "ok",
+    "data": {
+        "data": [
+            {
+                "id": "195a2c18-3418-3874-98fb-2913d7d18ed4",
+                "user_id": "9942b101-8b47-4d59-929f-5820956a54a0",
+                "title": "at",
+                "content": "Quo dolore rerum officiis provident modi omnis ipsa voluptatem.",
+                "hashed_content": "UmVwcmVoZW5kZXJpdCB1bmRlIGZhY2lsaXMgZGVzZXJ1bnQgZG9sb3JpYnVzIHVsbGFtIHZvbHVwdGFzIHVsbGFtIHZvbHVwdGFzLg==",
+                "excerpt": "eum",
+                "created_at": "2023-05-26T16:06:07+00:00",
+                "updated_at": "2023-05-26T16:06:07+00:00",
+                "deleted_at": null,
+                "author": null,
+                "tags": null,
+                "categories": null,
+                "state": "drafted"
+            },
+            {
+                "id": "70c0ce6c-fd2b-3dd9-bffb-da37f5f53ce4",
+                "user_id": "9942b101-8b47-4d59-929f-5820956a54a0",
+                "title": "et",
+                "content": "Rem sit consequatur maxime vel maxime excepturi.",
+                "hashed_content": "UXVhZXJhdCBvbW5pcyBkb2xvcmVtIG9kaXQgdGVtcG9yZSBiZWF0YWUu",
+                "excerpt": "quia",
+                "created_at": "2023-05-26T16:06:07+00:00",
+                "updated_at": "2023-05-26T16:06:07+00:00",
+                "deleted_at": null,
+                "author": null,
+                "tags": null,
+                "categories": null,
+                "state": "drafted"
+            },
+            {
+                "id": "9a9a9632-5d10-3083-9bec-5945c4d154f6",
+                "user_id": "9942b101-8b47-4d59-929f-5820956a54a0",
+                "title": "nostrum",
+                "content": "A amet qui quos quia reprehenderit dolore dolorem.",
+                "hashed_content": "U2ludCBleCBzaW1pbGlxdWUgc2l0IHV0IG5paGlsIGVzc2UgZXNzZS4=",
+                "excerpt": "ipsam",
+                "created_at": "2023-05-26T16:06:07+00:00",
+                "updated_at": "2023-05-26T16:06:07+00:00",
+                "deleted_at": null,
+                "author": null,
+                "tags": null,
+                "categories": null,
+                "state": "drafted"
+            },
+            {
+                "id": "ab82c226-68ee-380f-91b5-5405777e8713",
+                "user_id": "9942b101-8b47-4d59-929f-5820956a54a0",
+                "title": "accusamus",
+                "content": "Reprehenderit nihil qui officia voluptatum.",
+                "hashed_content": "T3B0aW8gZXhlcmNpdGF0aW9uZW0gdXQgdm9sdXB0YXRlcyBkb2xvcmlidXMgcXVvIHF1b3Mu",
+                "excerpt": "qui",
+                "created_at": "2023-05-26T16:06:07+00:00",
+                "updated_at": "2023-05-26T16:06:07+00:00",
+                "deleted_at": null,
+                "author": null,
+                "tags": null,
+                "categories": null,
+                "state": "drafted"
+            },
+            {
+                "id": "d95bac66-6b54-3f51-a2d1-66c6c120b9be",
+                "user_id": "9942b101-8b47-4d59-929f-5820956a54a0",
+                "title": "ut",
+                "content": "Iure et optio veritatis eum.",
+                "hashed_content": "Q29uc2VxdWF0dXIgZG9sb3JlbSB1dCB0ZW1wb3JpYnVzIG5hdHVzLg==",
+                "excerpt": "repellat",
+                "created_at": "2023-05-26T16:06:07+00:00",
+                "updated_at": "2023-05-26T16:06:07+00:00",
+                "deleted_at": null,
+                "author": null,
+                "tags": null,
+                "categories": null,
+                "state": "drafted"
+            }
+        ],
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://writernook.test/user/v1/article/article?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "meta": {
+            "current_page": 1,
+            "first_page_url": "http://writernook.test/user/v1/article/article?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "http://writernook.test/user/v1/article/article?page=1",
+            "next_page_url": null,
+            "path": "http://writernook.test/user/v1/article/article",
+            "per_page": 15,
+            "prev_page_url": null,
+            "to": 5,
+            "total": 5
+        }
+    }
+}

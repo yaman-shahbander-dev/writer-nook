@@ -1,14 +1,98 @@
 {
     "message": "OK",
     "data": {
-        "id": "5baba23e-3814-31d5-8fb0-aa4ca7b7035c",
+        "id": "0ee651fd-2a90-3fad-8bee-02d7d5c81c3a",
         "type": "categories",
         "attributes": {
-            "name": "Miss Nora Steuber III",
+            "name": "Turner Kautzer",
             "main_category_id": null,
-            "created_at": "2023-05-18T14:49:22.000000Z",
-            "updated_at": "2023-05-18T14:49:22.000000Z",
+            "created_at": "2023-05-21T14:53:04.000000Z",
+            "updated_at": "2023-05-21T14:53:04.000000Z",
             "deleted_at": null
+        },
+        "relationships": {
+            "articles": [
+                {
+                    "id": "15a30cdb-d512-3680-b136-8311e6d44830",
+                    "type": "articles",
+                    "attributes": {
+                        "user_id": "993887f8-db31-480f-bf57-6ddf7fb900ef",
+                        "title": "dolore",
+                        "content": "Reprehenderit fugit sint nobis aliquam suscipit sint ipsum.",
+                        "hashed_content": "T2RpdCBxdWkgaXRhcXVlIHBhcmlhdHVyIGF0cXVlIHV0Lg==",
+                        "excerpt": "saepe",
+                        "state": "created",
+                        "created_at": "2023-05-21T14:53:06.000000Z",
+                        "updated_at": "2023-05-21T14:53:06.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "9320059d-41be-3c38-be42-0acbf777f771",
+                    "type": "articles",
+                    "attributes": {
+                        "user_id": "993887f8-db31-480f-bf57-6ddf7fb900ef",
+                        "title": "voluptate",
+                        "content": "Consequatur et perspiciatis quae omnis soluta suscipit placeat.",
+                        "hashed_content": "RnVnYSBpbiBldCBhbGlxdWFtIHRlbXBvcmlidXMgZXN0IGF1dC4=",
+                        "excerpt": "sapiente",
+                        "state": "published",
+                        "created_at": "2023-05-21T14:53:06.000000Z",
+                        "updated_at": "2023-05-21T14:53:06.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "95907ceb-94b8-3a4c-984e-6ee075ea5021",
+                    "type": "articles",
+                    "attributes": {
+                        "user_id": "993887f8-db31-480f-bf57-6ddf7fb900ef",
+                        "title": "aliquam",
+                        "content": "Laborum dolores soluta ratione dolor.",
+                        "hashed_content": "SXVzdG8gc2VkIHF1aXMgYXRxdWUgbm9iaXMu",
+                        "excerpt": "repellendus",
+                        "state": "created",
+                        "created_at": "2023-05-21T14:53:06.000000Z",
+                        "updated_at": "2023-05-21T14:53:06.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "bb78f95b-fcf2-35c0-b9ad-5de5f06760dc",
+                    "type": "articles",
+                    "attributes": {
+                        "user_id": "993887f8-db31-480f-bf57-6ddf7fb900ef",
+                        "title": "atque",
+                        "content": "Consequuntur qui consectetur ut illum.",
+                        "hashed_content": "TW9sZXN0aWFlIHF1aSB2ZWxpdCBlc3QgZG9sb3JlbSBhbWV0IHZlbCBlc3QgdmVsLg==",
+                        "excerpt": "commodi",
+                        "state": "created",
+                        "created_at": "2023-05-21T14:53:06.000000Z",
+                        "updated_at": "2023-05-21T14:53:06.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                },
+                {
+                    "id": "ca8d7ede-2527-3057-8615-d78e5559eeac",
+                    "type": "articles",
+                    "attributes": {
+                        "user_id": "993887f8-db31-480f-bf57-6ddf7fb900ef",
+                        "title": "consequatur",
+                        "content": "Vitae quidem quaerat laborum cumque.",
+                        "hashed_content": "T21uaXMgZGVsZWN0dXMgcmVwZWxsYXQgcXVpIGVzdC4=",
+                        "excerpt": "quas",
+                        "state": "created",
+                        "created_at": "2023-05-21T14:53:06.000000Z",
+                        "updated_at": "2023-05-21T14:53:06.000000Z",
+                        "deleted_at": null
+                    },
+                    "relationships": []
+                }
+            ]
         }
     }
 }

@@ -19,9 +19,7 @@ class CategoryController extends Controller
 
         $categories = CategoryFacade::index();
 
-        return $categories
-            ? $this->okResponse($categories)
-            : $this->failedResponse();
+        return CategoryResource::paginatedCollection($categories);
     }
 
     public function show(string $category): JsonResponse

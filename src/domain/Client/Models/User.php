@@ -4,8 +4,10 @@ namespace Domain\Client\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Database\Factories\Client\UserFactory;
+use Domain\Article\Models\Article;
 use Domain\Client\QueryBuilders\UserQueryBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -65,8 +67,13 @@ class User extends Authenticatable
         return new UserQueryBuilder($query);
     }
 
-    protected static function newFactory()
+    protected static function newFactory(): UserFactory
     {
         return UserFactory::new();
+    }
+
+    public function articles(): HasMany
+    {
+        return $this->hasMany(Article::class, 'id', 'user_id');
     }
 }

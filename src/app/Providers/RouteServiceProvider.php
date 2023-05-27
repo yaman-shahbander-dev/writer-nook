@@ -35,6 +35,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             Route::middleware('bindings')->group(function () {
+
                 Route::prefix(config('route-prefix.admin.v1.prefix', 'admin/v1'))
                     ->group(function () {
                         Route::middleware('api')->group(function () {
@@ -48,14 +49,9 @@ class RouteServiceProvider extends ServiceProvider
 
                             Route::prefix(config('route-prefix.admin.v1.tag', 'tag'))
                                 ->group(base_path('routes/admin/v1/tag.php'));
-                        });
-                    });
 
-                Route::prefix(config('route-prefix.author.v1.prefix', 'author/v1'))
-                    ->group(function () {
-                        Route::middleware('api')->group(function () {
-                            Route::prefix(config('route-prefix.author.v1.client', 'client'))
-                                ->group(base_path('routes/author/v1/client.php'));
+                            Route::prefix(config('route-prefix.admin.v1.article', 'article'))
+                                ->group(base_path('routes/admin/v1/article.php'));
                         });
                     });
 
@@ -64,6 +60,11 @@ class RouteServiceProvider extends ServiceProvider
                         Route::middleware('api')->group(function () {
                             Route::prefix(config('route-prefix.user.v1.client', 'client'))
                                 ->group(base_path('routes/user/v1/client.php'));
+                        });
+
+                        Route::middleware('auth:api')->group(function () {
+                            Route::prefix(config('route-prefix.user.v1.article', 'article'))
+                                ->group(base_path('routes/user/v1/article.php'));
                         });
                     });
             });

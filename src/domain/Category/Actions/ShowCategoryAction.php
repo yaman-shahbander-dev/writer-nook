@@ -20,6 +20,7 @@ class ShowCategoryAction
     {
         $category = QueryBuilder::for($this->category)
             ->where('id', $id)
+            ->allowedIncludes(['articles'])
             ->first();
 
         return $category ? CategoryData::from($category) : null;

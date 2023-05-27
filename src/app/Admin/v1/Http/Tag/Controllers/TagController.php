@@ -19,9 +19,7 @@ class TagController extends Controller
 
         $tags = TagFacade::index();
 
-        return $tags
-            ? $this->okResponse($tags)
-            : $this->failedResponse();
+        return TagResource::paginatedCollection($tags);
     }
 
     public function show(string $tag): JsonResponse
