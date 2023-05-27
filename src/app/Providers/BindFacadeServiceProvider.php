@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Domain\Article\Services\AdminArticleService;
+use Domain\Article\Services\ArticleService;
 use Domain\Category\Services\CategoryService;
 use Domain\Client\Services\AdminAuthService;
 use Domain\Client\Services\UserAuthService;
@@ -38,6 +40,12 @@ class BindFacadeServiceProvider extends ServiceProvider
         });
         $this->app->bind('tag-service', function ($app) {
             return app(TagService::class);
+        });
+        $this->app->bind('article-service', function ($app) {
+            return app(ArticleService::class);
+        });
+        $this->app->bind('admin-article-service', function ($app) {
+            return app(AdminArticleService::class);
         });
     }
 }

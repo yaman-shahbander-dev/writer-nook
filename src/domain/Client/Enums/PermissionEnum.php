@@ -22,4 +22,10 @@ enum PermissionEnum: string
     case TAG_CREATE = 'tag.create.*';
     case TAG_UPDATE = 'tag.update.*';
     case TAG_DELETE = 'tag.delete.*';
+
+    case ARTICLE_VIEW = 'article.view.*';
+    case ARTICLE_CREATE = 'article.create.*';
+    case ARTICLE_UPDATE = 'article.update.*';
+    case ARTICLE_DELETE = 'article.delete.*';
+    case ARTICLE_APPROVE = 'article.approve.*';
 }

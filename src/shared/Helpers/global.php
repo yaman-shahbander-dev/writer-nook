@@ -1,8 +1,12 @@
 <?php
 
-if ( ! function_exists('hello')) {
-    function hello()
+if ( ! function_exists('getIds')) {
+    function getIds($collection): array
     {
-        return 'hello';
+        $ids = [];
+        foreach ($collection as $item) {
+            $ids[] = $item->id;
+        }
+        return $ids;
     }
 }

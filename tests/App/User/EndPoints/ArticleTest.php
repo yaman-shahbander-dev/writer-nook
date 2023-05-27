@@ -1,0 +1,64 @@
+<?php
+
+use Illuminate\Http\Response;
+use Database\Factories\Article\ArticleFactory;
+use Database\Factories\Client\UserFactory;
+use Database\Factories\Category\CategoryFactory;
+use Database\Factories\Tag\TagFactory;
+use Domain\Client\Enums\PermissionEnum;
+
+beforeEach(function () {
+    Artisan::call('passport:install');
+    $this->author = UserFactory::new()->author()->create();
+    $this->user = UserFactory::new()->create();
+    $this->categories = CategoryFactory::new()->count(10)->create();
+    $this->tags = TagFactory::new()->count(10)->create();
+    $this->articles = ArticleFactory::new(['user_id' => $this->author->id])->count(10)->create();
+    $this->createArticle = ArticleFactory::new()->definition();
+    $this->createArticle['categories'][]['id'] = $this->categories->first()->id;
+    $this->createArticle['tags'][]['id'] = $this->tags->first()->id;
+});
+
+it('gets paginated articles for the author', function () {
+    actWithPermission($this->author, PermissionEnum::ARTICLE_VIEW->value, ['author']);
+    $this->get(route('user.article.index'))->assertStatus(Response::HTTP_OK);
+});
+
+it('gets paginated articles for the user', function () {
+    actWithPermission($this->user, PermissionEnum::ARTICLE_VIEW->value);
+    $this->get(route('user.article.index'))->assertStatus(Response::HTTP_OK);
+});
+
+it('gets an article for the author', function () {
+    actWithPermission($this->author, PermissionEnum::ARTICLE_VIEW->value, ['author']);
+    $this->get(route('user.article.show', ['article' => $this->articles->first()->id]))
+        ->assertStatus(Response::HTTP_OK);
+});
+
+it('gets an article for the user', function () {
+    actWithPermission($this->user, PermissionEnum::ARTICLE_VIEW->value);
+    $this->get(route('user.article.show', ['article' => $this->articles->first()->id]))
+        ->assertStatus(Response::HTTP_OK);
+});
+
+it('creates an article for the author', function () {
+    actWithPermission($this->author, PermissionEnum::ARTICLE_CREATE->value, ['author']);
+    $this->post(route('user.article.store', $this->createArticle))
+        ->assertStatus(Response::HTTP_OK);
+});
+
+it('deletes an article for the author', function () {
+    actWithPermission($this->author, PermissionEnum::ARTICLE_DELETE->value, ['author']);
+    $this->delete(route('user.article.destroy', ['article' => $this->articles->first()->id]))
+        ->assertStatus(Response::HTTP_OK);
+});
+
+it('makes an article ready for the author', function () {
+    actWithPermission($this->author, PermissionEnum::ARTICLE_UPDATE->value, ['author']);
+    $this->put(
+        route(
+            'user.article.ready',
+            ['article' => $this->articles->first()->id]
+        )
+    )->assertStatus(Response::HTTP_OK);
+});

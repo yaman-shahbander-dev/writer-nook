@@ -5,7 +5,7 @@ namespace Domain\Tag\Actions;
 use Domain\Tag\DataTransferObjects\TagData;
 use Domain\Tag\Models\Tag;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Shared\Helpers\PaginatedCollectionData;
+use Spatie\LaravelData\PaginatedDataCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -18,14 +18,15 @@ class GetTagsAction
     ) {
     }
 
-    public function handle(): PaginatedCollectionData
+    public function handle(): PaginatedDataCollection
     {
         $tags = QueryBuilder::for($this->tag)
             ->allowedFilters([
                 AllowedFilter::partial('name')
             ])
-            ->jsonPaginate(TagData::class);
+            ->allowedIncludes(['articles'])
+            ->paginate();
 
-        return TagData::paginatedCollection($tags);
+        return TagData::collection($tags);
     }
 }

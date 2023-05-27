@@ -27,10 +27,18 @@ enum RoleEnum: string
                 PermissionEnum::TAG_CREATE->value,
                 PermissionEnum::TAG_UPDATE->value,
                 PermissionEnum::TAG_DELETE->value,
+                PermissionEnum::ARTICLE_VIEW->value,
+                PermissionEnum::ARTICLE_APPROVE->value,
+                PermissionEnum::ARTICLE_DELETE->value,
             ],
             self::AUTHOR->value => [
+                PermissionEnum::ARTICLE_VIEW->value,
+                PermissionEnum::ARTICLE_CREATE->value,
+                PermissionEnum::ARTICLE_UPDATE->value,
+                PermissionEnum::ARTICLE_DELETE->value,
             ],
             self::USER->value => [
+                PermissionEnum::ARTICLE_VIEW
             ]
         ];
     }
