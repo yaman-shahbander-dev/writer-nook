@@ -28,4 +28,9 @@ enum PermissionEnum: string
     case ARTICLE_UPDATE = 'article.update.*';
     case ARTICLE_DELETE = 'article.delete.*';
     case ARTICLE_APPROVE = 'article.approve.*';
+
+    case COMMENT_VIEW = 'comment.view.*';
+    case COMMENT_CREATE = 'comment.create.*';
+    case COMMENT_DELETE = 'comment.delete.*';
+    case COMMENT_APPROVE = 'comment.approve.*';
 }

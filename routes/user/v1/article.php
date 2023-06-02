@@ -14,4 +14,5 @@ Route::controller(ArticleController::class)
             Route::get('/article/author-articles','getAuthorArticles')->name('article.articles');
             Route::put('/article/{article}/ready', 'ready')->name('article.ready');
         });
+        Route::post('/article/comment', 'createComment')->name('article.comment.create');
     });

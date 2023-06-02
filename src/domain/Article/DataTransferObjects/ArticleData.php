@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Domain\Article\Enums\ArticleStates;
 use Domain\Category\DataTransferObjects\CategoryData;
 use Domain\Client\DataTransferObjects\AuthorData;
+use Domain\Comment\DataTransferObjects\CommentData;
 use Domain\Tag\DataTransferObjects\TagData;
 use Shared\Helpers\BaseData;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
@@ -31,6 +32,8 @@ class ArticleData extends BaseData
         public ?DataCollection $tags,
         #[DataCollectionOf(CategoryData::class)]
         public ?DataCollection $categories,
+        #[DataCollectionOf(CommentData::class)]
+        public ?DataCollection $comments,
         public ?string $state = ArticleStates::DRAFTED->value,
     ) {
     }

@@ -2,6 +2,7 @@
 
 namespace Domain\Article\Services;
 
+use Domain\Article\Actions\Shared\CreateCommentAction;
 use Domain\Article\Actions\Shared\DeleteArticleAction;
 use Domain\Article\Actions\Shared\GetArticlesAction;
 use Domain\Article\Actions\Shared\ShowArticleAction;
@@ -11,6 +12,7 @@ use Domain\Article\Actions\User\UpdateArticleAction;
 use Domain\Article\Actions\User\UpdateArticleStateToReadyAction;
 use Domain\Article\DataTransferObjects\ArticleData;
 use Domain\Client\Models\User;
+use Domain\Comment\DataTransferObjects\CommentData;
 
 class ArticleService
 {
@@ -47,5 +49,10 @@ class ArticleService
     public function ready(string $articleId)
     {
         return UpdateArticleStateToReadyAction::run($articleId);
+    }
+
+    public function createComment(CommentData $data)
+    {
+        return CreateCommentAction::run($data);
     }
 }

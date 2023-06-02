@@ -6,11 +6,13 @@ use Database\Factories\Article\ArticleFactory;
 use Domain\Article\States\ArticleState;
 use Domain\Category\Models\Category;
 use Domain\Client\Models\User;
+use Domain\Comment\Models\Comment;
 use Domain\Tag\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Shared\Traits\Uuid;
@@ -71,5 +73,10 @@ class Article extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function comments(): MorphMany
+    {
+        return $this->morphMany(Comment::class, 'commentable');
     }
 }

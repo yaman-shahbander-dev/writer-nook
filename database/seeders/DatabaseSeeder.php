@@ -13,8 +13,10 @@ use Database\Seeders\Client\PermissionSeeder;
 use Database\Seeders\Client\RolePermissionSeeder;
 use Database\Seeders\Client\UserPermissionSeeder;
 use Database\Seeders\Client\UserSeeder;
+use Database\Seeders\Comment\CommentSeeder;
 use Database\Seeders\Tag\TagSeeder;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -31,8 +33,7 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        // production seeders.
-        $this->call([
+        $seeders = [
             UserSeeder::class,
             CategorySeeder::class,
             PermissionSeeder::class,
@@ -44,7 +45,8 @@ class DatabaseSeeder extends Seeder
             ArticleSeeder::class,
             ArticleCategorySeeder::class,
             ArticleTagSeeder::class,
-        ]);
+            CommentSeeder::class
+        ];
 
 
 
@@ -57,10 +59,11 @@ class DatabaseSeeder extends Seeder
         | it may result data inconsistency. so be careful if you decide to disable them.
         |
         */
+
         if (app()->environment(['local', 'staging', 'testing'])) {
-//            Schema::disableForeignKeyConstraints();
-            $this->call(TestingSeeder::class);
-//            Schema::enableForeignKeyConstraints();
+            Schema::disableForeignKeyConstraints();
+            $this->call($seeders);
+            Schema::enableForeignKeyConstraints();
         }
     }
 }

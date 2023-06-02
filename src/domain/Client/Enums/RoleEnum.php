@@ -30,15 +30,21 @@ enum RoleEnum: string
                 PermissionEnum::ARTICLE_VIEW->value,
                 PermissionEnum::ARTICLE_APPROVE->value,
                 PermissionEnum::ARTICLE_DELETE->value,
+                PermissionEnum::COMMENT_VIEW->value,
+                PermissionEnum::COMMENT_CREATE->value,
+                PermissionEnum::COMMENT_DELETE->value,
+                PermissionEnum::COMMENT_APPROVE->value,
             ],
             self::AUTHOR->value => [
                 PermissionEnum::ARTICLE_VIEW->value,
                 PermissionEnum::ARTICLE_CREATE->value,
                 PermissionEnum::ARTICLE_UPDATE->value,
                 PermissionEnum::ARTICLE_DELETE->value,
+                PermissionEnum::COMMENT_CREATE->value,
             ],
             self::USER->value => [
-                PermissionEnum::ARTICLE_VIEW
+                PermissionEnum::ARTICLE_VIEW->value,
+                PermissionEnum::COMMENT_CREATE->value,
             ]
         ];
     }

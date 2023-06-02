@@ -7,6 +7,7 @@ use Domain\Article\Services\ArticleService;
 use Domain\Category\Services\CategoryService;
 use Domain\Client\Services\AdminAuthService;
 use Domain\Client\Services\UserAuthService;
+use Domain\Comment\Services\CommentService;
 use Domain\Tag\Services\TagService;
 use Illuminate\Support\ServiceProvider;
 
@@ -46,6 +47,9 @@ class BindFacadeServiceProvider extends ServiceProvider
         });
         $this->app->bind('admin-article-service', function ($app) {
             return app(AdminArticleService::class);
+        });
+        $this->app->bind('comment-service', function ($app) {
+           return app(CommentService::class);
         });
     }
 }

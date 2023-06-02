@@ -14,4 +14,7 @@ test('checks if routes are exist in article file that is located in admin v1 fol
 
     $this->expect(route('admin.article.destroy', ['article' => '0']))
         ->toBe($articleURL . '/article/0');
+
+    $this->expect(route('admin.article.comment.create'))
+        ->toBe($articleURL . '/article/comment');
 });

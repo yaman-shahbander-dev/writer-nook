@@ -2,6 +2,7 @@
 
 namespace App\User\v1\Http\Article\Controllers;
 
+use App\Admin\v1\Http\Article\Requests\CreateCommentRequest;
 use App\Http\Controllers\Controller;
 use App\User\v1\Http\Article\Requests\CreateArticleRequest;
 use App\User\v1\Http\Article\Requests\UpdateArticleRequest;
@@ -9,6 +10,8 @@ use Domain\Article\DataTransferObjects\ArticleData;
 use Domain\Article\Facades\ArticleFacade;
 use Domain\Article\Models\Article;
 use App\User\v1\Http\Article\Resources\ArticleResource;
+use Domain\Comment\DataTransferObjects\CommentData;
+use Domain\Comment\Models\Comment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -96,6 +99,17 @@ class ArticleController extends Controller
         $this->authorize('update', $article);
 
         $result = ArticleFacade::ready($article->id);
+
+        return $result
+            ? $this->okResponse()
+            : $this->failedResponse();
+    }
+
+    public function createComment(CreateCommentRequest $request): JsonResponse
+    {
+        $this->authorize('create', app(Comment::class));
+
+        $result = ArticleFacade::createComment(CommentData::from($request->all()));
 
         return $result
             ? $this->okResponse()
