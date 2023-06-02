@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Domain\Article\Builders\Builders\ArticleBuilder;
 use Domain\Article\Builders\IBuilders\IArticleBuilder;
+use Domain\Article\Models\Article;
+use Domain\Client\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
@@ -29,7 +31,8 @@ class AppServiceProvider extends ServiceProvider
         Model::shouldBeStrict(! $this->app->isProduction());
 
         Relation::morphMap([
-            MorphEnum::USER->value => \Domain\Client\Models\User::class,
+            MorphEnum::USER->value => User::class,
+            MorphEnum::ARTICLE->value => Article::class
         ]);
 
         $this->loadMigrationsFrom([
@@ -37,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
             database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Category',
             database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Tag',
             database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Article',
+            database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Comment',
         ]);
 
 

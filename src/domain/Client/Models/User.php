@@ -6,6 +6,7 @@ namespace Domain\Client\Models;
 use Database\Factories\Client\UserFactory;
 use Domain\Article\Models\Article;
 use Domain\Client\QueryBuilders\UserQueryBuilder;
+use Domain\Comment\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -75,5 +76,10 @@ class User extends Authenticatable
     public function articles(): HasMany
     {
         return $this->hasMany(Article::class, 'id', 'user_id');
+    }
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
     }
 }

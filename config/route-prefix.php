@@ -8,6 +8,7 @@ return [
             'category' => 'category',
             'tag' => 'tag',
             'article' => 'article',
+            'comment' => 'comment',
         ],
     ],
     'user' => [
@@ -15,6 +16,7 @@ return [
             'prefix' => 'user/v1',
             'client' => 'client',
             'article' => 'article',
+            'comment' => 'comment',
         ],
     ],
 ];

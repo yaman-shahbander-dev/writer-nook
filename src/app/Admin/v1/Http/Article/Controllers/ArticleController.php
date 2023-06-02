@@ -2,10 +2,13 @@
 
 namespace App\Admin\v1\Http\Article\Controllers;
 
+use App\Admin\v1\Http\Article\Requests\CreateCommentRequest;
 use App\Admin\v1\Http\Article\Resources\ArticleResource;
 use App\Http\Controllers\Controller;
 use Domain\Article\Facades\AdminArticleFacade;
 use Domain\Article\Models\Article;
+use Domain\Comment\DataTransferObjects\CommentData;
+use Domain\Comment\Models\Comment;
 use Illuminate\Http\JsonResponse;
 
 class ArticleController extends Controller
@@ -46,6 +49,17 @@ class ArticleController extends Controller
         $this->authorize('delete', $article);
 
         $result = AdminArticleFacade::destroy($article->id);
+
+        return $result
+            ? $this->okResponse()
+            : $this->failedResponse();
+    }
+
+    public function createComment(CreateCommentRequest $request): JsonResponse
+    {
+        $this->authorize('create', app(Comment::class));
+
+        $result = AdminArticleFacade::createComment(CommentData::from($request->all()));
 
         return $result
             ? $this->okResponse()

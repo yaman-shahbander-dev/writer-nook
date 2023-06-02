@@ -31,7 +31,8 @@ class GetAuthorArticlesAction
             ->allowedIncludes([
                 'author',
                 'tags',
-                'categories'
+                'categories',
+                'comments'
             ])
             ->where('user_id', $user->id)
             ->paginate();

@@ -23,7 +23,8 @@ class ShowArticleAction
             ->allowedIncludes([
                 'categories',
                 'tags',
-                'author'
+                'author',
+                'comments'
             ])
             ->first();
 

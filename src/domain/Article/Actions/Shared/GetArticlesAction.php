@@ -30,7 +30,8 @@ class GetArticlesAction
             ->allowedIncludes([
                 'author',
                 'tags',
-                'categories'
+                'categories',
+                'comments'
             ])
             ->paginate();
 

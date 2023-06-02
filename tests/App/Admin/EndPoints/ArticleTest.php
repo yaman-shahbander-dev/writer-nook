@@ -5,6 +5,7 @@ use Database\Factories\Article\ArticleFactory;
 use Database\Factories\Client\UserFactory;
 use Domain\Client\Enums\PermissionEnum;
 use Domain\Article\States\Ready;
+use Shared\Enums\MorphEnum;
 
 beforeEach(function () {
     Artisan::call('passport:install');
@@ -13,6 +14,12 @@ beforeEach(function () {
         'state' => Ready::class
     ])->create();
     $this->admin = UserFactory::new()->admin()->create();
+    $this->comment = [
+        'commentable_type' => MorphEnum::ARTICLE->value,
+        'article_id' => $this->articles->first()->id,
+        'user_id' => $this->admin->id,
+        'comment' => 'new comment'
+    ];
     actingAs($this->admin, ['admin']);
 });
 
@@ -36,5 +43,11 @@ it('approves an article for the admin', function () {
 it('deletes an article for the admin', function () {
     actWithPermission($this->admin, PermissionEnum::ARTICLE_DELETE->value, ['admin']);
     $this->delete(route('admin.article.destroy', ['article' => $this->articles->first()]))
+        ->assertStatus(Response::HTTP_OK);
+});
+
+it('stores an article for the admin', function () {
+    actWithPermission($this->admin, PermissionEnum::COMMENT_CREATE->value, ['admin']);
+    $this->post(route('admin.article.comment.create'), $this->comment)
         ->assertStatus(Response::HTTP_OK);
 });

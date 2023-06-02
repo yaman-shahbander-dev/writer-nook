@@ -16,12 +16,10 @@ class ArticleSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('articles')->truncate();
         $author = app(User::class)->query()->author()->first();
         ArticleFactory::new([
             'user_id' => $author->id
         ])->count(5)->create();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

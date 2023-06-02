@@ -3,6 +3,7 @@
 namespace App\Admin\v1\Http\Article\Resources;
 
 use App\Admin\v1\Http\Category\Resources\CategoryResource;
+use App\Admin\v1\Http\Comment\Resources\CommentResource;
 use App\Admin\v1\Http\Tag\Resources\TagResource;
 use App\Helpers\HasPaginatedCollection;
 use App\User\v1\Http\Client\Resources\UserResource;
@@ -38,6 +39,9 @@ class ArticleResource extends JsonResource
                 }),
                 'author' => $this->when($this->author, function () {
                     return UserResource::make($this->author);
+                }),
+                'comments' => $this->when($this->comments, function () {
+                    return CommentResource::collection($this->comments->items());
                 }),
             ]
         ];

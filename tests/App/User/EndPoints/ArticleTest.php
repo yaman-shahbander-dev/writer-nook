@@ -6,6 +6,7 @@ use Database\Factories\Client\UserFactory;
 use Database\Factories\Category\CategoryFactory;
 use Database\Factories\Tag\TagFactory;
 use Domain\Client\Enums\PermissionEnum;
+use Shared\Enums\MorphEnum;
 
 beforeEach(function () {
     Artisan::call('passport:install');
@@ -17,6 +18,18 @@ beforeEach(function () {
     $this->createArticle = ArticleFactory::new()->definition();
     $this->createArticle['categories'][]['id'] = $this->categories->first()->id;
     $this->createArticle['tags'][]['id'] = $this->tags->first()->id;
+    $this->authorComment = [
+        'commentable_type' => MorphEnum::ARTICLE->value,
+        'article_id' => $this->articles->first()->id,
+        'user_id' => $this->author->id,
+        'comment' => 'new comment'
+    ];
+    $this->userComment = [
+        'commentable_type' => MorphEnum::ARTICLE->value,
+        'article_id' => $this->articles->first()->id,
+        'user_id' => $this->user->id,
+        'comment' => 'new comment'
+    ];
 });
 
 it('gets paginated articles for the author', function () {
@@ -61,4 +74,16 @@ it('makes an article ready for the author', function () {
             ['article' => $this->articles->first()->id]
         )
     )->assertStatus(Response::HTTP_OK);
+});
+
+it('stores an article for the author', function () {
+    actWithPermission($this->author, PermissionEnum::COMMENT_CREATE->value, ['author']);
+    $this->post(route('user.article.comment.create'), $this->authorComment)
+        ->assertStatus(Response::HTTP_OK);
+});
+
+it('stores an article for the user', function () {
+    actWithPermission($this->user, PermissionEnum::COMMENT_CREATE->value);
+    $this->post(route('user.article.comment.create'), $this->userComment)
+        ->assertStatus(Response::HTTP_OK);
 });
