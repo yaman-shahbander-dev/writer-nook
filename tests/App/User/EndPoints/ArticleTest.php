@@ -87,3 +87,9 @@ it('stores an article for the user', function () {
     $this->post(route('user.article.comment.create'), $this->userComment)
         ->assertStatus(Response::HTTP_OK);
 });
+
+it('likes or unlikes an article for the user', function () {
+    actWithPermission($this->user, PermissionEnum::LIKE_CREATE->value);
+    $this->post(route('user.article.like.unlike'), ['article_id' => $this->articles->first()->id])
+        ->assertStatus(Response::HTTP_OK);
+});

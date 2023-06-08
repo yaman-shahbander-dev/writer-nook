@@ -15,4 +15,5 @@ Route::controller(ArticleController::class)
             Route::put('/article/{article}/ready', 'ready')->name('article.ready');
         });
         Route::post('/article/comment', 'createComment')->name('article.comment.create');
+        Route::post('/article/like-or-unlike', 'likeOrUnlike')->name('article.like.unlike');
     });

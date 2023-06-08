@@ -7,6 +7,7 @@ use Database\Factories\Client\UserFactory;
 use Domain\Article\Models\Article;
 use Domain\Client\QueryBuilders\UserQueryBuilder;
 use Domain\Comment\Models\Comment;
+use Domain\Like\Models\Like;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -15,6 +16,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Shared\Traits\Uuid;
 use Spatie\Permission\Traits\HasPermissions;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -24,6 +26,7 @@ class User extends Authenticatable
     use SoftDeletes;
     use Uuid;
     use HasPermissions;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -81,5 +84,10 @@ class User extends Authenticatable
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class);
     }
 }

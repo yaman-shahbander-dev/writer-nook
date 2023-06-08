@@ -2,6 +2,7 @@
 
 namespace Domain\Article\Services;
 
+use Domain\Article\Actions\User\LikeOrUnlikeAction;
 use Domain\Article\Actions\Shared\CreateCommentAction;
 use Domain\Article\Actions\Shared\DeleteArticleAction;
 use Domain\Article\Actions\Shared\GetArticlesAction;
@@ -13,6 +14,7 @@ use Domain\Article\Actions\User\UpdateArticleStateToReadyAction;
 use Domain\Article\DataTransferObjects\ArticleData;
 use Domain\Client\Models\User;
 use Domain\Comment\DataTransferObjects\CommentData;
+use Domain\Like\DataTransferObjects\LikeData;
 
 class ArticleService
 {
@@ -54,5 +56,10 @@ class ArticleService
     public function createComment(CommentData $data)
     {
         return CreateCommentAction::run($data);
+    }
+
+    public function likeOrUnlike(LikeData $data)
+    {
+        return LikeOrUnlikeAction::run($data);
     }
 }

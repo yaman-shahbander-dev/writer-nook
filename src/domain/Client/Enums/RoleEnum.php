@@ -34,6 +34,8 @@ enum RoleEnum: string
                 PermissionEnum::COMMENT_CREATE->value,
                 PermissionEnum::COMMENT_DELETE->value,
                 PermissionEnum::COMMENT_APPROVE->value,
+                PermissionEnum::LIKE_VIEW->value,
+                PermissionEnum::LIKE_CREATE->value,
             ],
             self::AUTHOR->value => [
                 PermissionEnum::ARTICLE_VIEW->value,
@@ -41,10 +43,12 @@ enum RoleEnum: string
                 PermissionEnum::ARTICLE_UPDATE->value,
                 PermissionEnum::ARTICLE_DELETE->value,
                 PermissionEnum::COMMENT_CREATE->value,
+                PermissionEnum::LIKE_VIEW->value,
             ],
             self::USER->value => [
                 PermissionEnum::ARTICLE_VIEW->value,
                 PermissionEnum::COMMENT_CREATE->value,
+                PermissionEnum::LIKE_VIEW->value,
             ]
         ];
     }
