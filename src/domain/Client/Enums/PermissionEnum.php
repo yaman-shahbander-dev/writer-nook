@@ -33,4 +33,7 @@ enum PermissionEnum: string
     case COMMENT_CREATE = 'comment.create.*';
     case COMMENT_DELETE = 'comment.delete.*';
     case COMMENT_APPROVE = 'comment.approve.*';
+
+    case LIKE_VIEW = 'like.view.*';
+    case LIKE_CREATE = 'like.create.*';
 }

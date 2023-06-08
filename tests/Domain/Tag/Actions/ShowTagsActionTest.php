@@ -3,7 +3,7 @@
 use Database\Factories\Tag\TagFactory;
 use Domain\Tag\Actions\ShowTagAction;
 
-it('gets a category from action', function () {
+it('gets a brand from action', function () {
     $tag = TagFactory::new()->create();
     $tag = ShowTagAction::run($tag->id);
     expect($tag)

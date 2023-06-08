@@ -23,4 +23,7 @@ test('checks if routes are exist in article file that is located in user v1 fold
 
     $this->expect(route('user.article.ready', ['article' => '0']))
         ->toBe($articleURL . '/article/0/ready');
+
+    $this->expect(route('user.article.like.unlike'))
+        ->toBe($articleURL . '/article/like-or-unlike');
 });

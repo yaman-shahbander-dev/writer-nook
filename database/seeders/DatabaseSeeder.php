@@ -14,6 +14,7 @@ use Database\Seeders\Client\RolePermissionSeeder;
 use Database\Seeders\Client\UserPermissionSeeder;
 use Database\Seeders\Client\UserSeeder;
 use Database\Seeders\Comment\CommentSeeder;
+use Database\Seeders\Like\LikeSeeder;
 use Database\Seeders\Tag\TagSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
@@ -45,7 +46,8 @@ class DatabaseSeeder extends Seeder
             ArticleSeeder::class,
             ArticleCategorySeeder::class,
             ArticleTagSeeder::class,
-            CommentSeeder::class
+            CommentSeeder::class,
+            LikeSeeder::class,
         ];
 
 

@@ -9,6 +9,7 @@ return [
             'tag' => 'tag',
             'article' => 'article',
             'comment' => 'comment',
+            'like' => 'like',
         ],
     ],
     'user' => [
