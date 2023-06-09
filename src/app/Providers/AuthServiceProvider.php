@@ -7,6 +7,8 @@ use Domain\Article\Models\Article;
 use Domain\Article\Policies\ArticlePolicy;
 use Domain\Category\Models\Category;
 use Domain\Category\Policies\CategoryPolicy;
+use Domain\Client\Models\BecomeAuthor;
+use Domain\Client\Policies\BecomeAuthorPolicy;
 use Domain\Comment\Models\Comment;
 use Domain\Comment\Policies\CommentPolicy;
 use Domain\Like\Models\Like;
@@ -28,6 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         Comment::class => CommentPolicy::class,
         Tag::class => TagPolicy::class,
         Like::class => LikePolicy::class,
+        BecomeAuthor::class => BecomeAuthorPolicy::class,
     ];
 
     /**

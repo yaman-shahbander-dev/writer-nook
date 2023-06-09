@@ -5,7 +5,9 @@ namespace Domain\Client\Services;
 use Domain\Client\Actions\Shared\RevokeTokenAction;
 use Domain\Client\Actions\User\LoginAction;
 use Domain\Client\Actions\User\RegisterUserAction;
+use Domain\Client\Actions\User\SendRequestAction;
 use Domain\Client\DataTransferObjects\AuthData;
+use Domain\Client\DataTransferObjects\BecomeAuthorData;
 use Domain\Client\Models\User;
 
 class UserAuthService
@@ -20,5 +22,9 @@ class UserAuthService
 
     public function logout(User $user) {
         return RevokeTokenAction::run($user);
+    }
+
+    public function sendRequest(BecomeAuthorData $data) {
+        return SendRequestAction::run($data);
     }
 }
