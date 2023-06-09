@@ -11,4 +11,7 @@ test('checks if routes are exist in client file that is located in user v1 folde
 
     $this->expect(route('user.logout'))
         ->toBe($clientURL . '/logout');
+
+    $this->expect(route('user.become-author.send'))
+        ->toBe($clientURL . '/send-become-author');
 });

@@ -9,6 +9,7 @@ use Database\Seeders\Article\ArticleTagSeeder;
 use Database\Seeders\Category\CategorySeeder;
 use Database\Seeders\Client\AdminPermissionSeeder;
 use Database\Seeders\Client\AuthorPermissionSeeder;
+use Database\Seeders\Client\BecomeAuthorSeeder;
 use Database\Seeders\Client\PermissionSeeder;
 use Database\Seeders\Client\RolePermissionSeeder;
 use Database\Seeders\Client\UserPermissionSeeder;
@@ -48,6 +49,7 @@ class DatabaseSeeder extends Seeder
             ArticleTagSeeder::class,
             CommentSeeder::class,
             LikeSeeder::class,
+            BecomeAuthorSeeder::class,
         ];
 
 

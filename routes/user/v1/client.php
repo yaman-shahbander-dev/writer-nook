@@ -14,4 +14,11 @@ Route::controller(AuthController::class)
         Route::get('/logout', 'logout')
             ->middleware(['auth:api', 'scope:user'])
             ->name('logout');
+
+        Route::post('/send-become-author', 'sendRequest')
+            ->middleware(['auth:api', 'scope:user'])
+            ->name('become-author.send');
     });
+
+
+

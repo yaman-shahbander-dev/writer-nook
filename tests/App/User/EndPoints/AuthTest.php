@@ -3,6 +3,7 @@
 use Database\Factories\Client\UserFactory;
 use Illuminate\Http\Response;
 use Domain\Client\Enums\UserGenders;
+use Domain\Client\Enums\PermissionEnum;
 
 beforeEach(function () {
    Artisan::call('passport:install');
@@ -20,6 +21,10 @@ beforeEach(function () {
         'gender' => UserGenders::getRandomValue(),
         'password_confirmation' => 'password'
     ];
+    $this->becomeAuthorData = [
+        'title' => 'some title',
+        'description' => 'some description'
+    ];
 });
 
 it('tests user login', function () {
@@ -29,5 +34,11 @@ it('tests user login', function () {
 
 it('tests user register', function () {
     $this->post(route('user.register', $this->registerData))
+        ->assertStatus(Response::HTTP_OK);
+});
+
+it('tests sending a become author request by the user', function () {
+    actWithPermission($this->user, PermissionEnum::BECOME_AUTHOR_SEND->value);
+    $this->post(route('user.become-author.send', $this->becomeAuthorData))
         ->assertStatus(Response::HTTP_OK);
 });

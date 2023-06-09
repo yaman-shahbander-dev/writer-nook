@@ -36,4 +36,9 @@ enum PermissionEnum: string
 
     case LIKE_VIEW = 'like.view.*';
     case LIKE_CREATE = 'like.create.*';
+
+    case BECOME_AUTHOR_VIEW = 'become_author.view.*';
+    case BECOME_AUTHOR_DELETE = 'become_author.delete.*';
+    case BECOME_AUTHOR_APPROVE = 'become_author.approve.*';
+    case BECOME_AUTHOR_SEND = 'become_author.send.*';
 }
