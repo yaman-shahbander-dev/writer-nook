@@ -49,7 +49,8 @@ class UpdateArticleRequest extends FormRequest
                 'uuid',
                 Rule::exists('tags', 'id')
                     ->withoutTrashed()
-            ]
+            ],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,gif', 'max:2048']
         ];
     }
 }

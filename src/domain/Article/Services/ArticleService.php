@@ -28,14 +28,14 @@ class ArticleService
         return ShowArticleAction::run($article);
     }
 
-    public function store(array $data)
+    public function store(array $data, $file)
     {
-        return DirectorArticleAction::run($data);
+        return DirectorArticleAction::run($data, $file);
     }
 
-    public function update(ArticleData $data)
+    public function update(ArticleData $data, $file)
     {
-        return UpdateArticleAction::run($data);
+        return UpdateArticleAction::run($data, $file);
     }
 
     public function destroy(string $articleId)

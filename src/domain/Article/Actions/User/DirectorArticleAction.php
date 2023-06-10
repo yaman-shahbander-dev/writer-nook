@@ -22,7 +22,7 @@ class DirectorArticleAction
     ) {
     }
 
-    public function handle(array $data): ArticleData
+    public function handle(array $data, $file): ArticleData
     {
         $article = $this->director->createArticle(
             $data['title'],
@@ -38,6 +38,8 @@ class DirectorArticleAction
 
         $articleDB->load('author');
 
+        $articleDB->addMedia($file)->toMediaCollection('article-image');
+
         $categories = SyncCategoriesToArticleAction::run($articleDB, getIds($article->categories));
 
         $tags = SyncTagsToArticleAction::run($articleDB, getIds($article->tags));
@@ -52,6 +54,7 @@ class DirectorArticleAction
             'created_at' => $articleDB->created_at,
             'updated_at' => $articleDB->updated_at,
             'deleted_at' => $articleDB->deleted_at,
+            'image_url' => $articleDB->getFirstMediaUrl('article-image'),
             'author' => UserData::from($articleDB->author),
             'categories' => CategoryData::collection($categories),
             'tags' => TagData::collection($tags),
