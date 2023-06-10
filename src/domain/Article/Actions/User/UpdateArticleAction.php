@@ -15,7 +15,7 @@ class UpdateArticleAction
     public function __construct(protected Article $article) {
     }
 
-    public function handle(ArticleData $data): bool
+    public function handle(ArticleData $data, $file): bool
     {
         $article = tap(
             QueryBuilder::for($this->article)->where('id', $data->id)
@@ -28,10 +28,18 @@ class UpdateArticleAction
             ])
             ->first();
 
+
         if ($article) {
             $categories = SyncCategoriesToArticleAction::run($article, getIds($data->categories));
             $tags = SyncTagsToArticleAction::run($article, getIds($data->tags));
             $article->state->transitionTo(Drafted::getMorphClass());
+            if ($file) {
+                $media = $article->getFirstMedia('article-image');
+                if ($media) {
+                    $media->delete();
+                }
+                $article->addMedia($file)->toMediaCollection('article-image');
+            }
             return !empty($categories) && !empty($tags);
         }
 

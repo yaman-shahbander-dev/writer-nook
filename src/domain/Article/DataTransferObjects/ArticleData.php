@@ -8,6 +8,7 @@ use Domain\Category\DataTransferObjects\CategoryData;
 use Domain\Client\DataTransferObjects\AuthorData;
 use Domain\Comment\DataTransferObjects\CommentData;
 use Domain\Tag\DataTransferObjects\TagData;
+use Illuminate\Http\UploadedFile;
 use Shared\Helpers\BaseData;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Attributes\MapName;
@@ -34,6 +35,7 @@ class ArticleData extends BaseData
         public ?DataCollection $categories,
         #[DataCollectionOf(CommentData::class)]
         public ?DataCollection $comments,
+        public ?string $imageUrl,
         public ?string $state = ArticleStates::DRAFTED->value,
     ) {
     }

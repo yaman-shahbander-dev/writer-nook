@@ -47,7 +47,8 @@ class CreateArticleRequest extends FormRequest
                 'uuid',
                 Rule::exists('tags', 'id')
                     ->withoutTrashed()
-            ]
+            ],
+            'image' => ['required', 'image', 'mimes:jpeg,png,gif', 'max:2048']
         ];
     }
 }

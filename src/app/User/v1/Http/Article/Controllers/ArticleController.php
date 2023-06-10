@@ -48,7 +48,7 @@ class ArticleController extends Controller
         DB::beginTransaction();
 
         try {
-            $article = ArticleFacade::store($request->all());
+            $article = ArticleFacade::store($request->all(), $request->file('image'));
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -66,7 +66,7 @@ class ArticleController extends Controller
         DB::beginTransaction();
 
         try {
-            $result = ArticleFacade::update(ArticleData::from($request));
+            $result = ArticleFacade::update(ArticleData::from($request), $request->file('image'));
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();

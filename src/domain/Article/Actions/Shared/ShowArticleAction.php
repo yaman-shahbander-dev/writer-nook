@@ -28,6 +28,12 @@ class ShowArticleAction
             ])
             ->first();
 
-        return $article ? ArticleData::from($article) : null;
+        if (!$article) {
+            return null;
+        }
+
+        $article->image_url = $article->getFirstMediaUrl('article-image');
+
+        return ArticleData::from($article);
     }
 }

@@ -35,6 +35,13 @@ class GetArticlesAction
             ])
             ->paginate();
 
+        $articlesWithImages = $articles->getCollection()->map(function ($article) {
+            $article->setAttribute('image_url', $article->getFirstMediaUrl('article-image'));
+            return $article;
+        });
+
+        $articles->setCollection($articlesWithImages);
+
         return ArticleData::collection($articles);
     }
 }

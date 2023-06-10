@@ -29,6 +29,7 @@ class ArticleResource extends JsonResource
                 'created_at' => $this->createdAt,
                 'updated_at' => $this->updatedAt,
                 'deleted_at' => $this->deletedAt,
+                'image_url' => $this->imageUrl
             ],
             'relationships' => [
                 'categories' => $this->when($this->categories, function () {
