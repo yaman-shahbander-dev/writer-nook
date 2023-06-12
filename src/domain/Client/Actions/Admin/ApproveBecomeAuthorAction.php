@@ -3,6 +3,7 @@
 namespace Domain\Client\Actions\Admin;
 
 use App\Exceptions\Client\DataNotFoundException;
+use Domain\Client\Actions\User\AssignPermissionsToAuthorAction;
 use Domain\Client\Enums\UserScopes;
 use Domain\Client\Enums\UserTypes;
 use Domain\Client\Models\BecomeAuthor;
@@ -31,11 +32,15 @@ class ApproveBecomeAuthorAction
             return throw new DataNotFoundException();
         }
 
+        $becomeAuthors->load('user');
+
         $result = $becomeAuthors->update([
             'approved' => true
         ]);
 
         if ($result) {
+            AssignPermissionsToAuthorAction::run($becomeAuthors->user);
+
             return QueryBuilder::for($this->user)
                 ->where('id', $becomeAuthors->user_id)
                 ->update([

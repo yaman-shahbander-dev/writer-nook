@@ -31,6 +31,7 @@ class Article extends Model implements HasMedia
 
     protected $table = 'articles';
 
+    protected array $dates = ['deleted_at'];
     /**
      * The attributes that are mass assignable.
      *
@@ -76,7 +77,8 @@ class Article extends Model implements HasMedia
         return $this->belongsToMany(Category::class)
             ->using(new class extends Pivot {
                 use Uuid;
-            });
+            })
+            ->withTimestamps();
     }
 
     public function tags(): BelongsToMany

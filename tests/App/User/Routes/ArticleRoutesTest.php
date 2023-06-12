@@ -19,7 +19,7 @@ test('checks if routes are exist in article file that is located in user v1 fold
         ->toBe($articleURL . '/article/0');
 
     $this->expect(route('user.article.articles'))
-        ->toBe($articleURL . '/article/author-articles');
+        ->toBe($articleURL . '/article/author-articles/get');
 
     $this->expect(route('user.article.ready', ['article' => '0']))
         ->toBe($articleURL . '/article/0/ready');
