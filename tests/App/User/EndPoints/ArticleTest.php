@@ -58,11 +58,8 @@ it('gets an article for the user', function () {
 
 //it('creates an article for the author', function () {
 //    actWithPermission($this->author, PermissionEnum::ARTICLE_CREATE->value, ['author']);
-//    Storage::fake('local');
-//    $image = UploadedFile::fake()
-//        ->create('test.png', 100, 'image/png')
-//        ->mimeType('image/png');
-//    $this->createArticle['image'] = $image;
+////    $this->createArticle['image'] = public_path('images/default-image.jpg');
+//    $this->createArticle['image'] = \File::get(public_path('images/default-image.jpg'));
 //    $this->post(route('user.article.store', $this->createArticle))
 //        ->assertStatus(Response::HTTP_OK);
 //});

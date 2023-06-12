@@ -11,7 +11,7 @@ Route::controller(ArticleController::class)
             Route::post('/article','store')->name('article.store');
             Route::put('/article/{article}','update')->name('article.update');
             Route::delete('/article/{article}','destroy')->name('article.destroy');
-            Route::get('/article/author-articles','getAuthorArticles')->name('article.articles');
+            Route::get('/article/author-articles/get', 'getAuthorArticles')->name('article.articles');
             Route::put('/article/{article}/ready', 'ready')->name('article.ready');
         });
         Route::post('/article/comment', 'createComment')->name('article.comment.create');
