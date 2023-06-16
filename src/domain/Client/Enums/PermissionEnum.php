@@ -41,4 +41,13 @@ enum PermissionEnum: string
     case BECOME_AUTHOR_DELETE = 'become_author.delete.*';
     case BECOME_AUTHOR_APPROVE = 'become_author.approve.*';
     case BECOME_AUTHOR_SEND = 'become_author.send.*';
+
+    case PLAN_VIEW = 'plan.view.*';
+    case PLAN_CREATE = 'plan.create.*';
+    case PLAN_UPDATE = 'plan.update.*';
+    case PLAN_DELETE = 'plan.delete.*';
+    case PLAN_CANCEL = 'plan.cancel.*';
+    case PLAN_RESUME = 'plan.resume.*';
+    case PLAN_CHECKOUT = 'plan.checkout.*';
+    case PLAN_SUBSCRIBE = 'plan.subscribe.*';
 }

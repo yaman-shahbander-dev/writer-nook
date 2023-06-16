@@ -39,6 +39,12 @@ enum RoleEnum: string
                 PermissionEnum::BECOME_AUTHOR_VIEW->value,
                 PermissionEnum::BECOME_AUTHOR_DELETE->value,
                 PermissionEnum::BECOME_AUTHOR_APPROVE->value,
+                PermissionEnum::PLAN_VIEW->value,
+                PermissionEnum::PLAN_CREATE->value,
+                PermissionEnum::PLAN_UPDATE->value,
+                PermissionEnum::PLAN_DELETE->value,
+                PermissionEnum::PLAN_CANCEL->value,
+                PermissionEnum::PLAN_RESUME->value,
             ],
             self::AUTHOR->value => [
                 PermissionEnum::ARTICLE_VIEW->value,
@@ -47,12 +53,22 @@ enum RoleEnum: string
                 PermissionEnum::ARTICLE_DELETE->value,
                 PermissionEnum::COMMENT_CREATE->value,
                 PermissionEnum::LIKE_VIEW->value,
+                PermissionEnum::PLAN_VIEW->value,
+                PermissionEnum::PLAN_CANCEL->value,
+                PermissionEnum::PLAN_RESUME->value,
+                PermissionEnum::PLAN_CHECKOUT->value,
+                PermissionEnum::PLAN_SUBSCRIBE->value,
             ],
             self::USER->value => [
                 PermissionEnum::ARTICLE_VIEW->value,
                 PermissionEnum::COMMENT_CREATE->value,
                 PermissionEnum::LIKE_VIEW->value,
                 PermissionEnum::BECOME_AUTHOR_SEND->value,
+                PermissionEnum::PLAN_VIEW->value,
+                PermissionEnum::PLAN_CANCEL->value,
+                PermissionEnum::PLAN_RESUME->value,
+                PermissionEnum::PLAN_CHECKOUT->value,
+                PermissionEnum::PLAN_SUBSCRIBE->value,
             ]
         ];
     }

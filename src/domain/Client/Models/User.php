@@ -18,6 +18,7 @@ use Laravel\Passport\HasApiTokens;
 use Shared\Traits\Uuid;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
@@ -28,6 +29,7 @@ class User extends Authenticatable
     use Uuid;
     use HasPermissions;
     use HasRoles;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.

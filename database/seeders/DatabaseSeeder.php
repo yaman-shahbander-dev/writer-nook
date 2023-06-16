@@ -16,6 +16,11 @@ use Database\Seeders\Client\UserPermissionSeeder;
 use Database\Seeders\Client\UserSeeder;
 use Database\Seeders\Comment\CommentSeeder;
 use Database\Seeders\Like\LikeSeeder;
+use Database\Seeders\Plan\FeatureSeeder;
+use Database\Seeders\Plan\PlanFeatureSeeder;
+use Database\Seeders\Plan\PlanSeeder;
+use Database\Seeders\Plan\UserPlanMonthSeeder;
+use Database\Seeders\Plan\UserPlanSeeder;
 use Database\Seeders\Tag\TagSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
@@ -50,6 +55,11 @@ class DatabaseSeeder extends Seeder
             CommentSeeder::class,
             LikeSeeder::class,
             BecomeAuthorSeeder::class,
+            PlanSeeder::class,
+            FeatureSeeder::class,
+            PlanFeatureSeeder::class,
+            UserPlanSeeder::class,
+            UserPlanMonthSeeder::class,
         ];
 
 

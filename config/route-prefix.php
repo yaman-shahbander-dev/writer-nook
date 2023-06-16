@@ -10,6 +10,7 @@ return [
             'article' => 'article',
             'comment' => 'comment',
             'like' => 'like',
+            'plan' => 'plan',
         ],
     ],
     'user' => [
@@ -18,6 +19,7 @@ return [
             'client' => 'client',
             'article' => 'article',
             'comment' => 'comment',
+            'plan' => 'plan',
         ],
     ],
 ];
