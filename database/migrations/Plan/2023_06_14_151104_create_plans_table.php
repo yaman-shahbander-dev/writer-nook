@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('stripe_price_plan');
+            $table->string('stripe_product_id');
             $table->string('type')->default(PlanTypes::BASIC->value);
             $table->string('duration')->default(DurationTypes::MONTH->value);
             $table->timestamp('hidden_at')->nullable();

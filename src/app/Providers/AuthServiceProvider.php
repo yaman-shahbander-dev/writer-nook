@@ -13,7 +13,9 @@ use Domain\Comment\Models\Comment;
 use Domain\Comment\Policies\CommentPolicy;
 use Domain\Like\Models\Like;
 use Domain\Like\Policies\LikePolicy;
+use Domain\Plan\Models\Feature;
 use Domain\Plan\Models\Plan;
+use Domain\Plan\Policies\FeaturePolicy;
 use Domain\Plan\Policies\PlanPolicy;
 use Domain\Tag\Models\Tag;
 use Domain\Tag\Policies\TagPolicy;
@@ -33,7 +35,8 @@ class AuthServiceProvider extends ServiceProvider
         Tag::class => TagPolicy::class,
         Like::class => LikePolicy::class,
         BecomeAuthor::class => BecomeAuthorPolicy::class,
-        Plan::class => PlanPolicy::class
+        Plan::class => PlanPolicy::class,
+        Feature::class => FeaturePolicy::class,
     ];
 
     /**

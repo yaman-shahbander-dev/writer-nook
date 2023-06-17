@@ -15,6 +15,7 @@ class PlanData extends BaseData
     public function __construct(
         public ?string $id,
         public string $stripePricePlan,
+        public string $stripeProductId,
         public string $type,
         public string $duration,
         public ?Carbon $hiddenAt,

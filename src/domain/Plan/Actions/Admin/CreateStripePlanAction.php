@@ -17,7 +17,7 @@ class CreateStripePlanAction
         Stripe::setApiKey(config('payment.stripe.secret_key'));
     }
 
-    public function handle(StripePlanData $data): string
+    public function handle(StripePlanData $data): array
     {
         $plan = $this->stripeClient->plans
             ->create([
@@ -30,6 +30,9 @@ class CreateStripePlanAction
                 'nickname' => $data->description
             ]);
 
-        return $plan->id;
+        return [
+            'stripe_price_plan' => $plan->id,
+            'stripe_product_id' => $plan->product
+        ];
     }
 }

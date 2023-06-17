@@ -18,6 +18,7 @@ class PlanResource extends JsonResource
             'type' => 'plans',
             'attributes' => [
                 'stripe_price_plan' => $this->stripePricePlan,
+                'stripe_product_id' => $this->stripeProductId,
                 'type' => $this->type,
                 'duration' => $this->duration,
                 'hidden_at' => $this->hiddenAt,

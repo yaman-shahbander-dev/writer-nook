@@ -21,6 +21,7 @@ class PlanFactory extends Factory
         return [
             'id' => fake()->uuid(),
             'stripe_price_plan' => fake()->uuid(),
+            'stripe_product_id' => fake()->uuid(),
             'type' => PlanTypes::BASIC->value,
             'duration' => DurationTypes::MONTH->value,
             'hidden_at' => null,

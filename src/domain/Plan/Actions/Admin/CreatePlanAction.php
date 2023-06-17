@@ -4,7 +4,6 @@ namespace Domain\Plan\Actions\Admin;
 
 use Domain\Plan\DataTransferObjects\CreatePlanData;
 use Domain\Plan\DataTransferObjects\PlanData;
-use Domain\Plan\DataTransferObjects\PlanFeatureData;
 use Domain\Plan\Models\Plan;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -18,11 +17,12 @@ class CreatePlanAction
     ) {
     }
 
-    public function handle(CreatePlanData $data)//: Plan|QueryBuilder
+    public function handle(CreatePlanData $data): PlanData
     {
         $plan = QueryBuilder::for($this->plan)
             ->create([
                 'stripe_price_plan' => $data->stripePricePlan,
+                'stripe_product_id' => $data->stripeProductId,
                 'type' => $data->type,
                 'duration' => $data->duration,
                 'name' => $data->name,

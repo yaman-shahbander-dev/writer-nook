@@ -8,6 +8,7 @@ use Domain\Category\Services\CategoryService;
 use Domain\Client\Services\AdminAuthService;
 use Domain\Client\Services\UserAuthService;
 use Domain\Comment\Services\CommentService;
+use Domain\Plan\Services\AdminFeatureService;
 use Domain\Plan\Services\AdminPlanService;
 use Domain\Plan\Services\UserPlanService;
 use Domain\Tag\Services\TagService;
@@ -58,6 +59,9 @@ class BindFacadeServiceProvider extends ServiceProvider
         });
         $this->app->bind('user-plan-service', function ($app) {
             return app(UserPlanService::class);
+        });
+        $this->app->bind('admin-feature-service', function ($app) {
+            return app(AdminFeatureService::class);
         });
     }
 }

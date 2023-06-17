@@ -50,4 +50,6 @@ enum PermissionEnum: string
     case PLAN_RESUME = 'plan.resume.*';
     case PLAN_CHECKOUT = 'plan.checkout.*';
     case PLAN_SUBSCRIBE = 'plan.subscribe.*';
+
+    case FEATURE_CREATE = 'feature.create.*';
 }

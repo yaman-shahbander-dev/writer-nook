@@ -3,23 +3,23 @@
 namespace Domain\Plan\DataTransferObjects;
 
 use Carbon\Carbon;
-use Domain\Plan\Enums\DurationTypes;
 use Shared\Helpers\BaseData;
+use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Attributes\MapName;
+use Spatie\LaravelData\DataCollection;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 
 #[MapName(SnakeCaseMapper::class)]
-class StripePlanData extends BaseData
+class UpdatePlanData extends BaseData
 {
     public function __construct(
-        public ?string $stripePricePlan,
-        public ?string $stripeProductId,
-        public float $basePrice,
-        public ?string $currency,
-        public string $duration,
+        public string $id,
+        public string $stripePricePlan,
+        public string $stripeProductId,
+        public string $type,
         public string $name,
         public string $description,
+        public array $features,
     ) {
-        $this->currency =  $currency ?: config('payment.cashier.currency');
     }
 }

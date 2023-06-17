@@ -7,6 +7,7 @@ use Domain\Article\Builders\IBuilders\IArticleBuilder;
 use Domain\Article\Models\Article;
 use Domain\Client\Models\User;
 use Domain\Plan\Actions\Admin\CreateStripePlanAction;
+use Domain\Plan\Actions\Admin\UpdateStripePlanAction;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
@@ -25,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             CreateStripePlanAction::class,
             fn() => new CreateStripePlanAction(new StripeClient(config('payment.stripe.secret_key')))
+        );
+        $this->app->bind(
+            UpdateStripePlanAction::class,
+            fn() => new UpdateStripePlanAction(new StripeClient(config('payment.stripe.secret_key')))
         );
     }
 
