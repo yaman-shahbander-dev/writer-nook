@@ -27,7 +27,8 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\SetLogContext::class,
-        \App\Http\Middleware\SetLocalLanguage::class
+        \App\Http\Middleware\SetLocalLanguage::class,
+        \App\Http\Middleware\CorsMiddleware::class,
     ];
 
     /**
@@ -74,5 +75,6 @@ class Kernel extends HttpKernel
         'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
         'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cors' => \App\Http\Middleware\CorsMiddleware::class,
     ];
 }

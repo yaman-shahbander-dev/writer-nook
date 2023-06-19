@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('subscription_items', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignUuid('subscription_id');
+            $table->id();
+            $table->foreignId('subscription_id');
             $table->string('stripe_id')->unique();
             $table->string('stripe_product');
             $table->string('stripe_price');

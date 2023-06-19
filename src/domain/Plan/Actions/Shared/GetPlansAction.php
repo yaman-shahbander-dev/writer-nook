@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Plan\Actions\Admin;
+namespace Domain\Plan\Actions\Shared;
 
 use Domain\Plan\DataTransferObjects\PlanData;
 use Domain\Plan\Models\Plan;
