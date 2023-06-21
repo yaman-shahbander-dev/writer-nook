@@ -26,9 +26,7 @@ class UpdatePlanAction
             ])
             ->first();
 
-        if ($plan) {
-            $result = SyncFeaturesAction::run($plan, $data->features);
-        }
+        $result = SyncFeaturesAction::run($plan, $data->features);
 
         return !!$result;
     }
