@@ -26,9 +26,9 @@ class PlanResource extends JsonResource
                 'description' => $this->description,
                 'base_price' => $this->basePrice,
                 'discount' => $this->discount,
-                'createdAt' => $this->createdAt,
-                'updatedAt' => $this->updatedAt,
-                'deletedAt' => $this->deletedAt,
+                'created_at' => $this->createdAt,
+                'updated_at' => $this->updatedAt,
+                'deleted_at' => $this->deletedAt,
             ],
             'relationships' => [
                 'features' => $this->when($this->features, function () {

@@ -2,12 +2,16 @@
 
 namespace Domain\Plan\Services;
 
+use Domain\Client\Models\User;
 use Domain\Plan\Actions\Admin\CreatePlanAction;
 use Domain\Plan\Actions\Admin\CreateStripePlanAction;
 use Domain\Plan\Actions\Admin\DeletePlanAction;
+use Domain\Plan\Actions\Admin\GetSubscriptionsAction;
 use Domain\Plan\Actions\Admin\ShowPlanAction;
 use Domain\Plan\Actions\Admin\UpdatePlanAction;
+use Domain\Plan\Actions\Shared\CancelSubscriptionAction;
 use Domain\Plan\Actions\Shared\GetPlansAction;
+use Domain\Plan\Actions\Shared\ResumeSubscriptionAction;
 use Domain\Plan\DataTransferObjects\CreatePlanData;
 use Domain\Plan\DataTransferObjects\StripePlanData;
 use Domain\Plan\DataTransferObjects\UpdatePlanData;
@@ -42,5 +46,20 @@ class AdminPlanService
     public function delete(string $planId)
     {
         return DeletePlanAction::run($planId);
+    }
+
+    public function getSubscriptions()
+    {
+        return GetSubscriptionsAction::run();
+    }
+
+    public function cancelUserSubscription(string $name, User $user)
+    {
+        return CancelSubscriptionAction::run($name, $user);
+    }
+
+    public function resumeUserSubscription(string $name, User $user)
+    {
+        return ResumeSubscriptionAction::run($name, $user);
     }
 }

@@ -2,9 +2,12 @@
 
 namespace App\User\v1\Http\Plan\Controllers;
 
+use App\User\v1\Http\Plan\Requests\CancelSubscriptionRequest;
+use App\User\v1\Http\Plan\Requests\ResumeSubscriptionRequest;
 use App\User\v1\Http\Plan\Requests\SubscribeRequest;
 use App\User\v1\Http\Plan\Resources\PlanResource;
 use App\Http\Controllers\Controller;
+use App\User\v1\Http\Plan\Resources\SubscriptionResource;
 use Domain\Plan\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -45,6 +48,37 @@ class PlanController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
         }
+
+        return $result
+            ? $this->okResponse()
+            : $this->failedResponse();
+    }
+
+    public function getUserSubscriptions(Request $request): JsonResponse
+    {
+        $this->authorize('view', app(Plan::class));
+
+        $subscriptions = UserPlanFacade::getUserSubscriptions($request->user());
+
+        return SubscriptionResource::paginatedCollection($subscriptions);
+    }
+
+    public function cancelSubscription(CancelSubscriptionRequest $request): JsonResponse
+    {
+        $this->authorize('cancel', app(Plan::class));
+
+        $result = UserPlanFacade::cancelSubscription($request->name, $request->user());
+
+        return $result
+            ? $this->okResponse()
+            : $this->failedResponse();
+    }
+
+    public function resumeSubscription(ResumeSubscriptionRequest $request): JsonResponse
+    {
+        $this->authorize('cancel', app(Plan::class));
+
+        $result = UserPlanFacade::resumeSubscription($request->name, $request->user());
 
         return $result
             ? $this->okResponse()

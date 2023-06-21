@@ -2,10 +2,14 @@
 
 namespace App\Admin\v1\Http\Plan\Controllers;
 
+use App\Admin\v1\Http\Plan\Requests\CancelSubscriptionRequest;
 use App\Admin\v1\Http\Plan\Requests\CreatePlanRequest;
+use App\Admin\v1\Http\Plan\Requests\ResumeSubscriptionRequest;
 use App\Admin\v1\Http\Plan\Requests\UpdatePlanRequest;
 use App\Admin\v1\Http\Plan\Resources\PlanResource;
+use App\Admin\v1\Http\Plan\Resources\SubscriptionResource;
 use App\Http\Controllers\Controller;
+use Domain\Client\Models\User;
 use Domain\Plan\DataTransferObjects\CreatePlanData;
 use Domain\Plan\DataTransferObjects\StripePlanData;
 use Domain\Plan\DataTransferObjects\UpdatePlanData;
@@ -76,6 +80,37 @@ class PlanController extends Controller
         $this->authorize('delete', $plan);
 
         $result = AdminPlanFacade::delete($plan->id);
+
+        return $result
+            ? $this->okResponse()
+            : $this->failedResponse();
+    }
+
+    public function getSubscriptions(): JsonResponse
+    {
+        $this->authorize('view', app(Plan::class));
+
+        $subscriptions = AdminPlanFacade::getSubscriptions();
+
+        return SubscriptionResource::paginatedCollection($subscriptions);
+    }
+
+    public function cancelUserSubscription(CancelSubscriptionRequest $request, User $user): JsonResponse
+    {
+        $this->authorize('cancel', app(Plan::class));
+
+        $result = AdminPlanFacade::cancelUserSubscription($request->name, $user);
+
+        return $result
+            ? $this->okResponse()
+            : $this->failedResponse();
+    }
+
+    public function resumeUserSubscription(ResumeSubscriptionRequest $request, User $user): JsonResponse
+    {
+        $this->authorize('cancel', app(Plan::class));
+
+        $result = AdminPlanFacade::resumeUserSubscription($request->name, $user);
 
         return $result
             ? $this->okResponse()

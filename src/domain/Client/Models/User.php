@@ -8,6 +8,7 @@ use Domain\Article\Models\Article;
 use Domain\Client\QueryBuilders\UserQueryBuilder;
 use Domain\Comment\Models\Comment;
 use Domain\Like\Models\Like;
+use Domain\Plan\Models\Subscription;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -97,5 +98,10 @@ class User extends Authenticatable
     public function becomeAuthor(): HasOne
     {
         return $this->hasOne(BecomeAuthor::class);
+    }
+
+    public function subscriptions(): HasMany
+    {
+        return $this->hasMany(Subscription::class);
     }
 }
