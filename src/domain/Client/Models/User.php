@@ -8,6 +8,7 @@ use Domain\Article\Models\Article;
 use Domain\Client\QueryBuilders\UserQueryBuilder;
 use Domain\Comment\Models\Comment;
 use Domain\Like\Models\Like;
+use Domain\Plan\Models\Subscription;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -18,6 +19,7 @@ use Laravel\Passport\HasApiTokens;
 use Shared\Traits\Uuid;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
@@ -28,6 +30,7 @@ class User extends Authenticatable
     use Uuid;
     use HasPermissions;
     use HasRoles;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -95,5 +98,10 @@ class User extends Authenticatable
     public function becomeAuthor(): HasOne
     {
         return $this->hasOne(BecomeAuthor::class);
+    }
+
+    public function subscriptions(): HasMany
+    {
+        return $this->hasMany(Subscription::class);
     }
 }

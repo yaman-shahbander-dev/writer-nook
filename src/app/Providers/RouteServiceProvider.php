@@ -35,7 +35,6 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             Route::middleware('bindings')->group(function () {
-
                 Route::prefix(config('route-prefix.admin.v1.prefix', 'admin/v1'))
                     ->group(function () {
                         Route::middleware('api')->group(function () {
@@ -58,6 +57,9 @@ class RouteServiceProvider extends ServiceProvider
 
                             Route::prefix(config('route-prefix.admin.v1.like', 'like'))
                                 ->group(base_path('routes/admin/v1/like.php'));
+
+                            Route::prefix(config('route-prefix.admin.v1.plan', 'plan'))
+                                ->group(base_path('routes/admin/v1/plan.php'));
                         });
                     });
 
@@ -71,6 +73,9 @@ class RouteServiceProvider extends ServiceProvider
                         Route::middleware('auth:api')->group(function () {
                             Route::prefix(config('route-prefix.user.v1.article', 'article'))
                                 ->group(base_path('routes/user/v1/article.php'));
+
+                            Route::prefix(config('route-prefix.user.v1.plan', 'plan'))
+                                ->group(base_path('routes/user/v1/plan.php'));
                         });
                     });
             });

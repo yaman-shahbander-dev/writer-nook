@@ -6,11 +6,14 @@ use Domain\Article\Builders\Builders\ArticleBuilder;
 use Domain\Article\Builders\IBuilders\IArticleBuilder;
 use Domain\Article\Models\Article;
 use Domain\Client\Models\User;
+use Domain\Plan\Actions\Admin\CreateStripePlanAction;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Cashier\Cashier;
 use Laravel\Passport\Passport;
 use Shared\Enums\MorphEnum;
+use Stripe\StripeClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(IArticleBuilder::class, ArticleBuilder::class);
+        $this->app->bind(
+            CreateStripePlanAction::class,
+            fn() => new CreateStripePlanAction(new StripeClient(config('payment.stripe.secret_key')))
+        );
     }
 
     /**
@@ -42,6 +49,7 @@ class AppServiceProvider extends ServiceProvider
             database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Article',
             database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Comment',
             database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Like',
+            database_path() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR . 'Plan',
         ]);
 
 
@@ -58,5 +66,7 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         Passport::setDefaultScope('user');
+
+        Cashier::useCustomerModel(User::class);
     }
 }
