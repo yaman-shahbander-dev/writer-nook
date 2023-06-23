@@ -2,8 +2,9 @@
 
 use App\User\v1\Http\Plan\Controllers\PlanController;
 
-Route::controller(PlanController::class)
+Route::middleware('auth:api')
     ->name('user.')
+    ->controller(PlanController::class)
     ->group(function () {
         Route::get('/plan', 'index')->name('plan.index');
         Route::get('/checkout/{plan}', 'checkout')->name('plan.checkout');

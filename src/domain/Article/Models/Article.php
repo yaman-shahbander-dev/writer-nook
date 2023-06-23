@@ -14,12 +14,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Shared\Traits\Uuid;
 use Spatie\ModelStates\HasStates;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Shared\Helpers\PivotModel;
 
 class Article extends Model implements HasMedia
 {
@@ -31,7 +31,6 @@ class Article extends Model implements HasMedia
 
     protected $table = 'articles';
 
-    protected array $dates = ['deleted_at'];
     /**
      * The attributes that are mass assignable.
      *
@@ -75,18 +74,14 @@ class Article extends Model implements HasMedia
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)
-            ->using(new class extends Pivot {
-                use Uuid;
-            })
+            ->using(PivotModel::class)
             ->withTimestamps();
     }
 
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class)
-            ->using(new class extends Pivot {
-                use Uuid;
-            });
+            ->using(PivotModel::class);
     }
 
     public function author(): BelongsTo

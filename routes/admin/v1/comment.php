@@ -2,8 +2,9 @@
 
 use App\Admin\v1\Http\Comment\Controllers\CommentController;
 
-Route::controller(CommentController::class)
+Route::middleware('auth:api')
     ->name('admin.')
+    ->controller(CommentController::class)
     ->group(function () {
         Route::get('comment', 'index')->name('comment.index');
         Route::get('comment/{comment}', 'show')->name('comment.show');

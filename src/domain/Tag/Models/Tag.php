@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Shared\Traits\Uuid;
+use Shared\Helpers\PivotModel;
 
 class Tag extends Model
 {
@@ -41,8 +42,6 @@ class Tag extends Model
     public function articles(): BelongsToMany
     {
         return $this->belongsToMany(Article::class)
-            ->using(new class extends Pivot {
-                use Uuid;
-            });
+            ->using(PivotModel::class);
     }
 }
