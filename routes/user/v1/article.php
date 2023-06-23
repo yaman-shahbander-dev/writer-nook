@@ -2,8 +2,9 @@
 
 use App\User\v1\Http\Article\Controllers\ArticleController;
 
-Route::controller(ArticleController::class)
+Route::middleware('auth:api')
     ->name('user.')
+    ->controller(ArticleController::class)
     ->group(function () {
         Route::get('/article','index')->name('article.index');
         Route::get('/article/{article}','show')->name('article.show');

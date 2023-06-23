@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Shared\Traits\Uuid;
+use Shared\Helpers\PivotModel;
 
 class Plan extends Model
 {
@@ -48,9 +48,7 @@ class Plan extends Model
     public function features(): BelongsToMany
     {
         return $this->belongsToMany(Feature::class, 'plan_features')
-            ->using(new class extends Pivot {
-               use Uuid;
-            });
+            ->using(PivotModel::class);
     }
 
     public function userPlans(): HasMany

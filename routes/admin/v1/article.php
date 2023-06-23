@@ -2,7 +2,8 @@
 
 use App\Admin\v1\Http\Article\Controllers\ArticleController;
 
-Route::name('admin.')
+Route::middleware('auth:api')
+    ->name('admin.')
     ->controller(ArticleController::class)
     ->group(function () {
     Route::get('/article', 'index')->name('article.index');

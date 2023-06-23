@@ -7,9 +7,9 @@ use Domain\Article\Models\Article;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Shared\Traits\Uuid;
+use Shared\Helpers\PivotModel;
 
 class Category extends Model
 {
@@ -42,8 +42,6 @@ class Category extends Model
     public function articles(): BelongsToMany
     {
         return $this->belongsToMany(Article::class)
-            ->using(new class extends Pivot {
-                use Uuid;
-            });
+            ->using(PivotModel::class);
     }
 }

@@ -2,7 +2,7 @@
 
 use App\Admin\v1\Http\Tag\Controllers\TagController;
 
-Route::apiResource('tag', TagController::class, [
+Route::middleware('auth:api')->apiResource('tag', TagController::class, [
     'names' => [
         'index' => 'admin.tag.index',
         'store' => 'admin.tag.store',
