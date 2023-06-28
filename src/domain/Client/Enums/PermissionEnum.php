@@ -51,5 +51,8 @@ enum PermissionEnum: string
     case PLAN_CHECKOUT = 'plan.checkout.*';
     case PLAN_SUBSCRIBE = 'plan.subscribe.*';
 
+    case FEATURE_VIEW = 'feature.view.*';
     case FEATURE_CREATE = 'feature.create.*';
+    case FEATURE_UPDATE = 'feature.update.*';
+    case FEATURE_DELETE = 'feature.delete.*';
 }

@@ -45,7 +45,10 @@ enum RoleEnum: string
                 PermissionEnum::PLAN_DELETE->value,
                 PermissionEnum::PLAN_CANCEL->value,
                 PermissionEnum::PLAN_RESUME->value,
+                PermissionEnum::FEATURE_VIEW->value,
                 PermissionEnum::FEATURE_CREATE->value,
+                PermissionEnum::FEATURE_UPDATE->value,
+                PermissionEnum::FEATURE_DELETE->value,
             ],
             self::AUTHOR->value => [
                 PermissionEnum::ARTICLE_VIEW->value,
