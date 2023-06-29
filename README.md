@@ -1,6 +1,18 @@
 <p align="center">
   A <a href="https://laravel.com" target="_blank">Laravel</a> project with a Domain-Driven Design (DDD) structure.
 </p>
+<p style="color: lavender">
+<b>Writer Nook</b> is a dynamic web application that offers a rich and diverse collection of articles on a variety of topics.
+It is designed to provide users with the focus on reading experience, where they can engage with content, 
+leave comments and express their appreciation by liking their favorite articles.
+</p>
+<p style="color: lavender">
+To access the full range of our content, users must subscribe to one of the premium plans defined by the admin.
+</p>
+<p style="color: lavender">
+The application has three types of users: regular users, authors, and admins. Authors have the unique privilege of creating 
+and publishing their own articles, while still enjoying the same features and benefits as regular users.
+</p>
 
 # Requirements
 - PHP ^8.1
@@ -27,6 +39,27 @@ Run Locally
 ```bash
 php artisan serve
 ```
+
+# Credentials
+To login as an admin use these credentials:
+```bash
+email: admin@project.com
+password: password
+```
+
+To login as an author use these credentials:
+```bash
+email: author@project.com
+password: password
+```
+
+To login as a user use these credentials:
+```bash
+email: user@project.com
+password: password
+```
+
+
 # Installed Packages
 
 General:
@@ -34,6 +67,12 @@ General:
 - [Laravel Actions](https://laravelactions.com)
 - [Laravel Data](https://spatie.be/docs/laravel-data/v3/introduction)
 - [Laravel Query Builder](https://spatie.be/index.php/docs/laravel-query-builder/v5/introduction)
+- [Laravel Cashier](https://laravel.com/docs/10.x/billing)
+- [Laravel Passport](https://laravel.com/docs/10.x/passport)
+- [Spatie Media Library](https://spatie.be/docs/laravel-medialibrary/v10/introduction)
+- [Laravel Model States](https://spatie.be/docs/laravel-model-states/v2/01-introduction)
+- [Laravel Permission](https://spatie.be/docs/laravel-permission/v5/introduction)
+- [Stripe PHP](https://github.com/stripe/stripe-php)
 
 Development:
 - [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper)
@@ -42,11 +81,11 @@ Development:
 - [Pest Testing Framework](https://pestphp.com/)
 - [Grum PHP](https://github.com/phpro/grumphp)
 - [Security Advisor](https://github.com/Roave/SecurityAdvisories)
+- [Laravel Homestead](https://laravel.com/docs/10.x/homestead)
 
 # Features
 - [DDD (Domain Driven Design)](#ddd)
 - [API Response Helper](#api-response-helper)
-- [Scribe Api Tags](#scribe-api-tags)
 - [Global Helper](#global-helper)
 - [Migration Structure](#migration-structure)
 - [Polymorphic Mapping](#polymorphic-mapping)
@@ -151,26 +190,6 @@ class ProductController extends Controller
     }
 }
 ```
-## Scribe Api Tags
-Additional scribe tags that match the ApiResponseHelper responses.
-
-### Available Response tags:
-| Tag                      | Status |
-|:-------------------------|:-------|
-| `@okResponse`            | `200`  |
-| `@createdResponse`       | `201`  |
-| `@failedResponse`        | `400`  |
-| `@unauthorizedResponse`  | `401`  |
-| `@forbiddenResponse`     | `403`  |
-| `@notFoundResponse`      | `404`  |
-| `@unprocessableResponse` | `422`  |
-| `@serverErrorResponse`   | `500`  |
-
-### Other Available tag:
-| Tag               | Description                                                      |
-|:------------------|:-----------------------------------------------------------------|
-| `@usesPagination` | will add `page[number]` and `page[size]` to the query parameters |
-
 
 ## Global Helper
 Simple php file that contains you global functions, which you can find it in `./src/shared/Helpers/global.php`.

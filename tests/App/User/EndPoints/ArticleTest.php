@@ -7,6 +7,7 @@ use Database\Factories\Category\CategoryFactory;
 use Database\Factories\Tag\TagFactory;
 use Domain\Client\Enums\PermissionEnum;
 use Shared\Enums\MorphEnum;
+use App\Http\Middleware\CheckSubscription;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -32,6 +33,7 @@ beforeEach(function () {
         'user_id' => $this->user->id,
         'comment' => 'new comment'
     ];
+    $this->withoutMiddleware(CheckSubscription::class);
 });
 
 it('gets paginated articles for the author', function () {

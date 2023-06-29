@@ -35,8 +35,6 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        UserFactory::new()->count(10)->create();
-
         User::query()->firstOrCreate([
             'email' => 'author@project.com',
         ], [
@@ -51,5 +49,22 @@ class UserSeeder extends Seeder
             'banned_at' => null,
             'remember_token' => Str::random(10),
         ]);
+
+        User::query()->firstOrCreate([
+            'email' => 'user@project.com',
+        ], [
+            'name' => 'User',
+            'first_name' => 'User',
+            'last_name' => 'User',
+            'gender' => UserGenders::getRandomValue(),
+            'scope' => UserScopes::USER->value,
+            'type' => UserTypes::USER->value,
+            'email_verified_at' => now(),
+            'password' => 'password',
+            'banned_at' => null,
+            'remember_token' => Str::random(10),
+        ]);
+
+        UserFactory::new()->count(10)->create();
     }
 }

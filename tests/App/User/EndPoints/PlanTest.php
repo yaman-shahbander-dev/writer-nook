@@ -3,7 +3,6 @@
 use Illuminate\Http\Response;
 use Database\Factories\Plan\PlanFactory;
 use Database\Factories\Client\UserFactory;
-use Database\Factories\Plan\FeatureFactory;
 use Domain\Client\Enums\PermissionEnum;
 
 beforeEach(function () {
