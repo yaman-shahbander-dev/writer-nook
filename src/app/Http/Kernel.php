@@ -76,5 +76,6 @@ class Kernel extends HttpKernel
         'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cors' => \App\Http\Middleware\CorsMiddleware::class,
+        'subscribed' => \App\Http\Middleware\CheckSubscription::class,
     ];
 }

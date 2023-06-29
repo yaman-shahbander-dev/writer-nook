@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 // for testing stripe confirm payment
-$clientSecret = 'seti_1NKlCBH3qVRn63M2Dq41tvQf_secret_O6zAGglgMlaU5qhrsP9IjGYeN9MufFb';
+$clientSecret = 'seti_1NONOFH3qVRn63M23HWQb5Hu_secret_OAippmkMyjiZCH6LR2KBFxhPoIqcATJ';
 Route::get('/stripe-key', function () use ($clientSecret) {
     return response()->json([
         'publishableKey' => config('payment.stripe.public_key'),

@@ -2,7 +2,7 @@
 
 use App\User\v1\Http\Article\Controllers\ArticleController;
 
-Route::middleware('auth:api')
+Route::middleware(['auth:api', 'subscribed'])
     ->name('user.')
     ->controller(ArticleController::class)
     ->group(function () {
