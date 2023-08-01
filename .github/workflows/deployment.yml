@@ -1,0 +1,21 @@
+name: Deploy Project
+
+on:
+  push:
+    branches:
+      main
+  pull_request:
+    types:
+      closed
+    branches:
+      main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare the environment
+        uses: ./.github/actions/shared-steps
+      - name: Run Tests
+        run: vendor/bin/pest

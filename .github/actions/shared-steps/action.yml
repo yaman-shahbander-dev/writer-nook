@@ -1,0 +1,16 @@
+name: 'Shared Steps'
+description: 'This actions gets the code, install PHP, and packages'
+author: 'Mohamad Yaman Shahbandar'
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up PHP
+      uses: shivammathur/setup-php@2.25.5
+      with:
+        php-version: '8.2'
+        extensions: mbstring, zip, pdo_mysql
+    - name: Install Dependencies
+      shell: Bash
+      run: composer install --no-interaction --prefer-dist
