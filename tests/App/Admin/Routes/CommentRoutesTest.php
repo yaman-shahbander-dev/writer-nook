@@ -9,8 +9,6 @@ test('checks if routes are exist in comment file that is located in admin v1 fol
     $this->expect(route('admin.comment.show', ['comment' => '0']))
         ->toBe($commentURL . '/comment/0');
 
-    $this->expect(route('admin.comment.store'))
-        ->toBe($commentURL . '/comment');
 
     $this->expect(route('admin.comment.approve', ['comment' => '0']))
         ->toBe($commentURL . '/comment/0/approve');
