@@ -20,7 +20,7 @@ and publishing their own articles, while still enjoying the same features and be
 
 # Installation
 ```bash
-composer create-project yaman-shahbander/writer-nook api-app
+composer create-project yaman-shahbander-dev/writer-nook api-app
 ```
 Install dependencies
 ```bash
