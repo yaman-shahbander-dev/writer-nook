@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: artisan
-          image: yamahn/cli:latest
+          image: yamahn/writer-cli:latest
           command: ["tail", "-f", "/dev/null"] # Keep the pod running
           envFrom:
             - configMapRef:
