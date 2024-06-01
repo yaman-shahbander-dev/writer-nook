@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: artisan
-          image: yamahn/frontend:latest
+          image: yamahn/writer-frontend:latest
           command: ["tail", "-f", "/dev/null"]
           envFrom:
             - configMapRef:
