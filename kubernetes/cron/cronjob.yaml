@@ -12,7 +12,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: scheduler
-              image: yamahn/cli:latest
+              image: yamahn/writer-cli:latest
               command:
                 - php
               args:
