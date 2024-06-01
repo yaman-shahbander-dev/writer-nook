@@ -20,7 +20,7 @@ spec:
     spec:
       initContainers:
         - name: migrations
-          image: yamahn/cli:latest
+          image: yamahn/writer-cli:latest
           command:
             - php
           args:
@@ -34,7 +34,7 @@ spec:
                 name: laravel-app-secret
       containers:
         - name: fpm
-          image: yamahn/fpm:latest
+          image: yamahn/writer-fpm:latest
           ports:
             - containerPort: 9000
           envFrom:
