@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: queue-worker
-          image: yamahn/cli:latest
+          image: yamahn/writer-cli:latest
           command:
             - php
           args:
