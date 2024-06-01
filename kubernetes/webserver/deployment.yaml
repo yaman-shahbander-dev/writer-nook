@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: yamahn/web_server:latest
+          image: yamahn/writer-web_server:latest
           ports:
             - containerPort: 80
           envFrom:
