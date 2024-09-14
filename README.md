@@ -1,5 +1,5 @@
 <p align="center">
-  A <a href="https://laravel.com" target="_blank">Laravel</a> project with a Domain-Driven Design (DDD) structure.
+  A <a href="https://laravel.com" target="_blank">Laravel</a> Articles project with a Domain-Driven Design (DDD) structure.
 </p>
 <p style="color: lavender">
 <b>Writer Nook</b> is a dynamic web application that offers a rich and diverse collection of articles on a variety of topics.
